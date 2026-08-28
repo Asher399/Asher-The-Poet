@@ -1,20 +1,288 @@
-  finds courage to speak."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Asher The Poet | Official Website</title>
+
+  <meta name="description" content="Official website of Asher The Poet — poet, author, creative writer and storyteller.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0d;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 11, 13, 0.97);
+      padding: 16px 10px;
+      border-bottom: 1px solid #292929;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top, #29220d, #0b0b0d 60%);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cccccc;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #d4af37 !important;
+      margin-bottom: 25px !important;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      margin: 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #d4af37;
+      color: #111111;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #d4af37;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+      color: #d4af37;
+    }
+
+    .about {
+      text-align: center;
+      color: #dddddd;
+      max-width: 750px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .book-card {
+      max-width: 600px;
+      margin: auto;
+      padding: 35px 25px;
+      text-align: center;
+      border: 1px solid #333333;
+      border-radius: 15px;
+      background: #151518;
+    }
+
+    .book-card h3 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .book-card p {
+      color: #cccccc;
+      margin-bottom: 25px;
+    }
+
+    .quote {
+      text-align: center;
+      padding: 45px 25px;
+      background: #151518;
+      border-left: 3px solid #d4af37;
+      border-right: 3px solid #d4af37;
+      border-radius: 15px;
+      font-size: 22px;
+      font-style: italic;
+      color: #eeeeee;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cccccc;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #292929;
+      color: #999999;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #d4af37;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 0 4px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#books">Books</a>
+    <a href="#poetry">Poetry</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero" id="home">
+    <div>
+      <h1>Asher <span>The Poet</span></h1>
+
+      <p class="tagline">
+        Poet • Author • Storyteller
+      </p>
+
+      <p>
+        Welcome to the official website of Asher The Poet —
+        where words become voices, stories become memories,
+        and silence becomes poetry.
+      </p>
+
+      <a class="btn" href="#books">Explore My Books</a>
+      <a class="btn secondary" href="#contact">Contact Me</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+
+    <p class="about">
+      I am Asher The Poet, a poet, author and creative writer
+      passionate about transforming thoughts, experiences and
+      emotions into meaningful words.
+      <br><br>
+      Through poetry and storytelling, I aim to inspire,
+      challenge minds and give a voice to stories that deserve
+      to be heard.
     </p>
   </section>
 
-  <section>
-    <h2>Contact</h2>
+  <section id="books">
+    <h2>My Books</h2>
+
+    <div class="book-card">
+      <h3>Broken Silence</h3>
+
+      <p>
+        A powerful literary work exploring the thoughts,
+        experiences and emotions that often remain unspoken.
+      </p>
+
+      <a class="btn" href="#contact">Ask About the Book</a>
+    </div>
+  </section>
+
+  <section id="poetry">
+    <h2>Poetry & Words</h2>
+
+    <div class="quote">
+      “Sometimes the words we fear to speak
+      become the poems our hearts need to hear.”
+      <br><br>
+      — <strong>Asher The Poet</strong>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
 
     <p>
-      For poetry, books, collaborations and inquiries,
-      get in touch with Asher The Poet.
+      For poetry, books, collaborations, performances
+      and other enquiries, get in touch with Asher The Poet.
     </p>
+
+    <a class="btn" href="mailto:jacobsmphasquare@gmail.com">
+      Email Me
+    </a>
+
+    <a class="btn secondary" href="https://wa.me/265987569509">
+      WhatsApp Me
+    </a>
   </section>
 
   <footer>
-    © 2026 Asher The Poet. All Rights Reserved.
+    © 2026 <strong>Asher The Poet</strong>. All rights reserved.
   </footer>
 
 </body>
 </html>
-HTML
