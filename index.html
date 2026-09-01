@@ -1,886 +1,1367 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Asher The Poet | Official Website</title>  <meta name="description" content="Official website of Asher The Poet — Malawian poet, author, storyteller and Servant of God.">  <meta name="author" content="Jacob Stephen Mphampha">  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Asher The Poet | Official Author Website</title><meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha, poet, author, storyteller and Servant of God."><meta name="author" content="Jacob Stephen Mphampha"><style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* =====================================================
+   RESET & GLOBAL
+===================================================== */
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      background: #080808;
-      color: #eeeeee;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.8;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    a {
-      text-decoration: none;
-    }
+body {
+    background: #0a0a0a;
+    color: #eeeeee;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.8;
+}
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    /* NAVIGATION */
+img {
+    max-width: 100%;
+    display: block;
+}
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      background: rgba(8, 8, 8, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #292929;
-      padding: 18px 0;
-    }
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* =====================================================
+   COLORS
+===================================================== */
+
+:root {
+    --gold: #c9a227;
+    --gold-light: #e0c35a;
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark-2: #171717;
+    --white: #f5f5f5;
+    --muted: #a9a9a9;
+    --border: #2b2b2b;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    width: min(1180px, 92%);
+    margin: auto;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--gold);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #d5d5d5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 92vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(201,162,39,0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #10100e 0%,
+            #090909 65%,
+            #0a0a0a 100%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border: 1px solid rgba(201,162,39,0.08);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 92%);
+}
+
+.eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 9vw, 88px);
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-role {
+    color: var(--gold-light);
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    margin-bottom: 28px;
+}
+
+.hero-description {
+    max-width: 720px;
+    margin: auto;
+
+    color: #c2c2c2;
+
+    font-size: 17px;
+}
+
+.hero-buttons {
+    margin-top: 38px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    margin: 5px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    color: #101010;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #eeeeee;
+}
+
+.btn-outline:hover {
+    color: #111111;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+section {
+    padding: 105px 0;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-heading .small-title {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+
+    color: var(--white);
+
+    line-height: 1.2;
+}
+
+.gold-line {
+    width: 55px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin: 18px auto 0;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section {
+    background: #0a0a0a;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.5fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.about-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.about-intro h3 {
+    font-size: 30px;
+
+    line-height: 1.25;
+
+    margin-bottom: 22px;
+}
+
+.about-intro h3 span {
+    color: var(--gold);
+}
+
+.author-card {
+    border-left: 2px solid var(--gold);
+
+    padding-left: 20px;
+
+    color: var(--muted);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+.author-card strong {
+    color: #ffffff;
+}
+
+.about-text p {
+    color: #c5c5c5;
+
+    font-size: 17px;
+
+    margin-bottom: 22px;
+}
+
+.about-text strong {
+    color: #ffffff;
+}
+
+.signature {
+    color: var(--gold);
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   FAITH
+===================================================== */
+
+.faith-section {
+    background:
+        linear-gradient(
+            180deg,
+            #10100e,
+            #0c0c0c
+        );
+}
+
+.faith-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 65px 55px;
+
+    text-align: center;
+
+    border: 1px solid #39321b;
+
+    background:
+        linear-gradient(
+            145deg,
+            #12120f,
+            #0b0b0b
+        );
+}
+
+.cross {
+    color: var(--gold);
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+.faith-box h3 {
+    font-size: 31px;
+
+    margin-bottom: 20px;
+}
+
+.faith-box p {
+    color: #c2c2c2;
+
+    max-width: 750px;
+
+    margin: 0 auto 20px;
+
+    font-size: 17px;
+}
+
+.faith-quote {
+    color: var(--gold-light) !important;
+
+    font-style: italic;
+
+    font-size: 20px !important;
+
+    margin-top: 30px !important;
+}
+
+
+/* =====================================================
+   BOOKS
+===================================================== */
+
+.books-section {
+    background: #0a0a0a;
+}
+
+.books-introduction {
+    max-width: 720px;
+
+    margin: -25px auto 55px;
+
+    text-align: center;
+
+    color: #a9a9a9;
+
+    font-size: 16px;
+}
+
+.books-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+.book-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 340px;
+
+    padding: 38px;
+
+    border: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0e0e0e
+        );
+
+    transition: 0.35s;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--gold);
+}
+
+.book-card.featured {
+    border-color: #51451e;
+}
+
+.book-number {
+    color: var(--gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 24px;
+}
+
+.book-card h3 {
+    font-size: 29px;
+
+    margin-bottom: 15px;
+}
+
+.book-card p {
+    color: #aaaaaa;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.book-status {
+    position: absolute;
+
+    left: 38px;
+    bottom: 32px;
+
+    color: var(--gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   COVER PLACEHOLDER
+   Ready for images later
+===================================================== */
+
+.cover-space {
+    height: 170px;
+
+    margin-bottom: 25px;
+
+    border: 1px dashed #454545;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #666666;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   POETRY
+===================================================== */
+
+.poetry-section {
+    background: #101010;
+}
+
+.poetry-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 75px 40px;
+
+    text-align: center;
+
+    border-top: 1px solid #3c3218;
+
+    border-bottom: 1px solid #3c3218;
+}
+
+.poetry-box blockquote {
+    font-size: clamp(25px, 4vw, 36px);
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #eeeeee;
+}
+
+.poetry-box cite {
+    display: block;
+
+    margin-top: 30px;
+
+    color: var(--gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    font-style: normal;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   AUTHOR'S MESSAGE
+===================================================== */
+
+.message-section {
+    background: #0a0a0a;
+}
+
+.message {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.message p {
+    color: #c0c0c0;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.message strong {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(201,162,39,0.08),
+            transparent 45%
+        );
+}
+
+.contact-box {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 65px 35px;
+
+    border: 1px solid var(--border);
+
+    background: #111111;
+}
+
+.contact-box p {
+    max-width: 650px;
+
+    margin: 0 auto 32px;
+
+    color: #bcbcbc;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #777777;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+}
+
+.footer-brand {
+    color: var(--gold);
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.footer-role {
+    color: #999999;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
 
     .nav-inner {
-      width: min(1120px, 92%);
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+        flex-direction: column;
 
-    .brand {
-      color: #d4af37;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 800;
-      letter-spacing: 2px;
-      font-size: 18px;
+        padding: 15px 0;
     }
 
     .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      justify-content: center;
+        gap: 13px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
     }
 
     .nav-links a {
-      color: #dddddd;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      font-weight: bold;
-      transition: 0.3s;
+        font-size: 11px;
     }
-
-    .nav-links a:hover {
-      color: #d4af37;
-    }
-
-    /* HERO */
 
     .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          #33280d 0%,
-          #161207 28%,
-          #080808 68%
-        );
+        min-height: 84vh;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border: 1px solid rgba(212,175,55,0.10);
-      border-radius: 50%;
-      top: -260px;
-      left: 50%;
-      transform: translateX(-50%);
+    .hero-description {
+        font-size: 16px;
     }
-
-    .hero-content {
-      width: min(850px, 92%);
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .eyebrow {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: #d4af37;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 8vw, 82px);
-      line-height: 1.05;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #d4af37;
-    }
-
-    .role {
-      font-size: 20px;
-      color: #d4af37;
-      font-style: italic;
-      margin-bottom: 28px;
-    }
-
-    .hero-text {
-      max-width: 700px;
-      margin: auto;
-      color: #c7c7c7;
-      font-size: 18px;
-    }
-
-    .hero-buttons {
-      margin-top: 35px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      margin: 5px;
-      border-radius: 3px;
-      background: #d4af37;
-      color: #111111;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      font-size: 13px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(212,175,55,0.18);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #eeeeee;
-      border: 1px solid #d4af37;
-    }
-
-    /* SECTIONS */
 
     section {
-      padding: 100px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-heading span {
-      display: block;
-      color: #d4af37;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+        padding: 75px 0;
     }
 
     .section-heading h2 {
-      font-size: 40px;
-      color: #ffffff;
+        font-size: 32px;
     }
 
-    .gold-line {
-      width: 55px;
-      height: 2px;
-      background: #d4af37;
-      margin: 18px auto 0;
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
-    /* ABOUT */
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 55px;
-      align-items: start;
+    .about-intro {
+        position: static;
     }
 
-    .about-title {
-      font-size: 30px;
-      color: #ffffff;
-      margin-bottom: 15px;
+    .books-grid {
+        grid-template-columns: 1fr;
     }
 
-    .about-title span {
-      color: #d4af37;
+    .faith-box {
+        padding: 45px 22px;
     }
 
-    .about-side {
-      border-left: 2px solid #d4af37;
-      padding-left: 25px;
-      color: #aaaaaa;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
+    .poetry-box {
+        padding: 55px 22px;
     }
 
-    .about-content p {
-      color: #c9c9c9;
-      font-size: 17px;
-      margin-bottom: 22px;
+    .contact-box {
+        padding: 45px 22px;
     }
 
-    .about-content strong {
-      color: #ffffff;
-    }
+    .book-card {
+        min-height: 320px;
 
-    .signature {
-      margin-top: 30px;
-      color: #d4af37;
-      font-size: 24px;
-      font-style: italic;
-    }
-
-    /* FAITH */
-
-    .faith {
-      background:
-        linear-gradient(
-          180deg,
-          #0b0b0b,
-          #11100b,
-          #080808
-        );
-    }
-
-    .faith-card {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      padding: 65px 45px;
-      border: 1px solid #3b3218;
-      background: #0e0e0e;
-    }
-
-    .cross {
-      font-size: 38px;
-      color: #d4af37;
-      margin-bottom: 18px;
-    }
-
-    .faith-card h3 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-
-    .faith-card p {
-      color: #c5c5c5;
-      font-size: 17px;
-      max-width: 720px;
-      margin: 0 auto 20px;
-    }
-
-    .faith-quote {
-      color: #d4af37 !important;
-      font-style: italic;
-      font-size: 20px !important;
-      margin-top: 30px !important;
-    }
-
-    /* BOOKS */
-
-    .books-intro {
-      text-align: center;
-      max-width: 700px;
-      margin: -20px auto 45px;
-      color: #aaaaaa;
-    }
-
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .book {
-      background: #111111;
-      border: 1px solid #292929;
-      padding: 38px;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: 0.3s;
-    }
-
-    .book:hover {
-      border-color: #d4af37;
-      transform: translateY(-4px);
-    }
-
-    .book-number {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #d4af37;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .book h3 {
-      font-size: 27px;
-      margin-bottom: 15px;
-    }
-
-    .book p {
-      color: #aaaaaa;
-      font-size: 15px;
-      margin-bottom: 25px;
+        padding: 30px;
     }
 
     .book-status {
-      color: #d4af37;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+        left: 30px;
     }
 
-    /* POETRY */
+}
 
-    .poetry {
-      background: #0d0d0d;
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 430px) {
+
+    .hero h1 {
+        font-size: 45px;
     }
 
-    .poetry-card {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      padding: 70px 40px;
-      border-top: 1px solid #3b3218;
-      border-bottom: 1px solid #3b3218;
+    .hero-role {
+        font-size: 17px;
     }
 
-    .poetry-card blockquote {
-      font-size: clamp(24px, 4vw, 34px);
-      font-style: italic;
-      color: #eeeeee;
-      line-height: 1.5;
+    .nav-links {
+        gap: 9px;
     }
 
-    .poetry-card cite {
-      display: block;
-      margin-top: 28px;
-      color: #d4af37;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      font-style: normal;
-      letter-spacing: 2px;
+    .nav-links a {
+        font-size: 10px;
     }
 
-    /* CONTACT */
+    .btn {
+        width: 90%;
 
-    .contact-card {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      padding: 60px 35px;
-      background: #111111;
-      border: 1px solid #292929;
+        margin: 5px auto;
     }
 
-    .contact-card p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      color: #bbbbbb;
-      font-size: 17px;
-    }
+}
 
-    /* FOOTER */
+</style></head><body><!-- =====================================================
+     NAVIGATION
+===================================================== --><nav class="navbar"><div class="nav-inner">
 
-    footer {
-      border-top: 1px solid #292929;
-      padding: 45px 20px;
-      text-align: center;
-      color: #777777;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-    }
+    <div class="logo">
+        ASHER THE POET
+    </div>
 
-    footer strong {
-      color: #d4af37;
-    }
+    <div class="nav-links">
 
-    .footer-name {
-      color: #ffffff;
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
+        <a href="#home">HOME</a>
 
-    /* MOBILE */
+        <a href="#about">ABOUT</a>
 
-    @media (max-width: 760px) {
+        <a href="#faith">FAITH</a>
 
-      .nav-inner {
-        flex-direction: column;
-      }
+        <a href="#books">BOOKS</a>
 
-      .nav-links {
-        gap: 13px;
-      }
+        <a href="#poetry">POETRY</a>
 
-      .hero {
-        min-height: 85vh;
-      }
+        <a href="#contact">CONTACT</a>
 
-      .hero-text {
-        font-size: 16px;
-      }
+    </div>
 
-      section {
-        padding: 70px 0;
-      }
+</div>
 
-      .section-heading h2 {
-        font-size: 32px;
-      }
+</nav><!-- =====================================================
+     HERO
+===================================================== --><header class="hero" id="home"><div class="hero-content">
 
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+    <div class="eyebrow">
+        OFFICIAL AUTHOR WEBSITE
+    </div>
 
-      .about-side {
-        border-left: none;
-        border-top: 1px solid #3b3218;
-        padding: 20px 0 0;
-      }
+    <h1>
+        Asher <span>The Poet</span>
+    </h1>
 
-      .book-grid {
-        grid-template-columns: 1fr;
-      }
+    <div class="hero-role">
+        Poet • Author • Storyteller • Servant of God
+    </div>
 
-      .book {
-        padding: 30px 25px;
-      }
+    <p class="hero-description">
+        Welcome to the official home of
+        <strong>Jacob Stephen Mphampha</strong>,
+        professionally known as Asher The Poet —
+        a writer devoted to the power of words,
+        meaningful ideas, literature, faith and purpose.
+    </p>
 
-      .faith-card {
-        padding: 45px 22px;
-      }
+    <div class="hero-buttons">
 
-      .poetry-card {
-        padding: 50px 22px;
-      }
+        <a href="#books" class="btn">
+            EXPLORE THE BOOKS
+        </a>
 
-      .contact-card {
-        padding: 45px 22px;
-      }
-    }
+        <a href="#about" class="btn btn-outline">
+            ABOUT THE AUTHOR
+        </a>
 
-  </style></head><body>  <!-- NAVIGATION -->  <nav><div class="nav-inner">
+    </div>
 
-  <div class="brand">
+</div>
+
+</header><!-- =====================================================
+     ABOUT
+===================================================== --><section class="about-section" id="about"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            THE AUTHOR
+        </span>
+
+        <h2>
+            About Asher The Poet
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-intro">
+
+            <h3>
+                A Voice Built
+                <span>Through Words.</span>
+            </h3>
+
+            <div class="author-card">
+
+                <p>
+                    <strong>Jacob Stephen Mphampha</strong>
+                </p>
+
+                <p>
+                    Known professionally as
+                    <strong>Asher The Poet</strong>
+                </p>
+
+                <p>
+                    Poet • Author • Storyteller
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-text">
+
+            <p>
+                <strong>Asher The Poet</strong>, whose real name
+                is <strong>Jacob Stephen Mphampha</strong>,
+                is a Malawian poet, writer, storyteller and
+                emerging author with a passion for literature
+                and meaningful expression.
+            </p>
+
+            <p>
+                His writing explores subjects such as
+                <strong>love, relationships, psychology,
+                emotions, personal development, wisdom,
+                purpose and human behavior.</strong>
+            </p>
+
+            <p>
+                Through poetry and literary works, he seeks
+                to transform thoughts and experiences into
+                words that encourage reflection, inspire
+                growth and create meaningful conversations.
+            </p>
+
+            <p>
+                His growing body of literary work includes
+                <strong>The Broken Silence</strong>,
+                <strong>The Psychology of Love</strong>,
+                <strong>Rise Above Average</strong> and
+                <strong>The Wisdom of Love</strong>.
+            </p>
+
+            <p>
+                Asher believes that words carry responsibility.
+                A writer can entertain, educate, challenge,
+                encourage and inspire. His ambition is therefore
+                not simply to write, but to create work that
+                leaves something valuable in the mind of the
+                reader.
+            </p>
+
+            <p>
+                His journey as a young Malawian writer continues
+                to develop, with a long-term vision of creating
+                meaningful literature that reaches readers
+                beyond borders.
+            </p>
+
+            <div class="signature">
+                — Asher The Poet
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     FAITH
+===================================================== --><section class="faith-section" id="faith"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            FAITH & PURPOSE
+        </span>
+
+        <h2>
+            A Servant of God
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="faith-box">
+
+        <div class="cross">
+            ✝
+        </div>
+
+        <h3>
+            Faith. Purpose. Service.
+        </h3>
+
+        <p>
+            Beyond writing and creativity, Asher The Poet
+            identifies himself as a
+            <strong>Servant of God</strong>.
+            His faith forms an important part of his
+            values, purpose and personal journey.
+        </p>
+
+        <p>
+            He seeks to use the gifts entrusted to him
+            responsibly — using words to encourage,
+            inspire, teach, reflect and communicate
+            messages of hope, wisdom, love, faith and purpose.
+        </p>
+
+        <p class="faith-quote">
+            “Let my words carry meaning,
+            my life carry purpose,
+            and my gifts serve God.”
+        </p>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     BOOKS
+===================================================== --><section class="books-section" id="books"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            SELECTED WORKS
+        </span>
+
+        <h2>
+            Books
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <p class="books-introduction">
+
+        A growing collection of literary works exploring
+        love, wisdom, personal development, relationships,
+        human behavior and the pursuit of purpose.
+
+    </p>
+
+
+    <div class="books-grid">
+
+
+        <!-- BOOK 01 -->
+
+        <article class="book-card featured">
+
+            <div class="cover-space">
+                BROKEN SILENCE COVER<br>
+                IMAGE WILL BE ADDED HERE
+            </div>
+
+            <div class="book-number">
+                BOOK 01
+            </div>
+
+            <h3>
+                The Broken Silence
+            </h3>
+
+            <p>
+                A literary work exploring thoughts,
+                experiences, emotions and stories that
+                often remain unspoken.
+            </p>
+
+            <div class="book-status">
+                LITERARY WORK
+            </div>
+
+        </article>
+
+
+
+        <!-- BOOK 02 -->
+
+        <article class="book-card">
+
+            <div class="book-number">
+                BOOK 02
+            </div>
+
+            <h3>
+                The Psychology of Love
+            </h3>
+
+            <p>
+                An exploration of love, emotional connection,
+                relationships, human behavior and the
+                psychological dimensions of love.
+            </p>
+
+            <div class="book-status">
+                LITERARY WORK
+            </div>
+
+        </article>
+
+
+
+        <!-- BOOK 03 -->
+
+        <article class="book-card featured">
+
+            <div class="cover-space">
+                RISE ABOVE AVERAGE COVER<br>
+                IMAGE WILL BE ADDED HERE
+            </div>
+
+            <div class="book-number">
+                BOOK 03
+            </div>
+
+            <h3>
+                Rise Above Average
+            </h3>
+
+            <p>
+                A motivational work centered on growth,
+                ambition, discipline, purpose and the
+                pursuit of becoming more than ordinary.
+            </p>
+
+            <div class="book-status">
+                LITERARY WORK
+            </div>
+
+        </article>
+
+
+
+        <!-- BOOK 04 -->
+
+        <article class="book-card">
+
+            <div class="book-number">
+                BOOK 04
+            </div>
+
+            <h3>
+                The Wisdom of Love
+            </h3>
+
+            <p>
+                A reflective work exploring love,
+                emotional understanding, relationships,
+                wisdom and the lessons that love teaches.
+            </p>
+
+            <div class="book-status">
+                LITERARY WORK
+            </div>
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     POETRY
+===================================================== --><section class="poetry-section" id="poetry"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            WORDS & REFLECTION
+        </span>
+
+        <h2>
+            Poetry
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="poetry-box">
+
+        <blockquote>
+
+            “Sometimes the words we fear to speak
+            become the poems our hearts need to hear.”
+
+        </blockquote>
+
+        <cite>
+            — ASHER THE POET
+        </cite>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     AUTHOR'S MESSAGE
+===================================================== --><section class="message-section"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            A WORD FROM THE AUTHOR
+        </span>
+
+        <h2>
+            Why I Write
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="message">
+
+        <p>
+            I write because there are thoughts that deserve
+            to be expressed, experiences that deserve to be
+            remembered, and questions that deserve to be
+            explored.
+        </p>
+
+        <p>
+            Through my writing, I hope to encourage people
+            to think deeply, love wisely, grow intentionally
+            and discover greater purpose in their lives.
+        </p>
+
+        <p>
+            <strong>
+                Every word is an opportunity to make a difference.
+            </strong>
+        </p>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     CONTACT
+===================================================== --><section class="contact-section" id="contact"><div class="container">
+
+    <div class="section-heading">
+
+        <span class="small-title">
+            CONNECT
+        </span>
+
+        <h2>
+            Contact Asher
+        </h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <p>
+            For book enquiries, poetry, collaborations,
+            performances, creative projects or other
+            professional enquiries, get in touch.
+        </p>
+
+        <a
+            href="mailto:jacobsmphasquare@gmail.com"
+            class="btn">
+
+            EMAIL ASHER
+
+        </a>
+
+
+        <a
+            href="https://wa.me/265987569509"
+            class="btn btn-outline">
+
+            WHATSAPP
+
+        </a>
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     FOOTER
+===================================================== --><footer><div class="footer-brand">
     ASHER THE POET
-  </div>
-
-  <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#faith">Faith</a>
-    <a href="#books">Books</a>
-    <a href="#poetry">Poetry</a>
-    <a href="#contact">Contact</a>
-  </div>
-
 </div>
 
-  </nav>  <!-- HERO -->  <header class="hero" id="home"><div class="hero-content">
-
-  <div class="eyebrow">
-    Official Website
-  </div>
-
-  <h1>
-    Asher <span>The Poet</span>
-  </h1>
-
-  <div class="role">
+<div class="footer-role">
     Poet • Author • Storyteller • Servant of God
-  </div>
-
-  <p class="hero-text">
-    Welcome to the official website of
-    <strong>Asher The Poet</strong> —
-    a space dedicated to poetry, literature,
-    faith, ideas, and the power of words.
-  </p>
-
-  <div class="hero-buttons">
-
-    <a class="btn" href="#books">
-      Explore Books
-    </a>
-
-    <a class="btn btn-outline" href="#about">
-      Discover My Story
-    </a>
-
-  </div>
-
-</div>
-
-  </header>  <!-- ABOUT -->  <section id="about"><div class="container">
-
-  <div class="section-heading">
-
-    <span>Author Profile</span>
-
-    <h2>About Asher The Poet</h2>
-
-    <div class="gold-line"></div>
-
-  </div>
-
-
-  <div class="about-layout">
-
-    <div>
-
-      <h3 class="about-title">
-        The Voice Behind
-        <span>The Words</span>
-      </h3>
-
-      <div class="about-side">
-        Jacob Stephen Mphampha<br>
-        Known professionally as<br>
-        <strong>Asher The Poet</strong>
-      </div>
-
-    </div>
-
-
-    <div class="about-content">
-
-      <p>
-        <strong>Asher The Poet</strong>, whose real name is
-        <strong>Jacob Stephen Mphampha</strong>, is a Malawian
-        poet, writer, storyteller, and emerging author
-        passionate about the power of words and the depth
-        of the human experience.
-      </p>
-
-      <p>
-        His writing explores themes including
-        <strong>love, relationships, psychology,
-        emotions, personal growth, wisdom,
-        purpose, and human behavior.</strong>
-        Through his work, he seeks to give language
-        to thoughts and experiences that are often
-        difficult to express.
-      </p>
-
-      <p>
-        His literary works include
-        <strong><em>The Broken Silence</em></strong>,
-        <strong><em>The Psychology of Love</em></strong>,
-        <strong><em>Rise Above Average</em></strong>,
-        and <strong><em>The Wisdom of Love</em></strong>.
-      </p>
-
-      <p>
-        Asher believes that writing can do more than
-        entertain. It can challenge the mind, encourage
-        reflection, inspire growth, and create meaningful
-        conversations about life.
-      </p>
-
-      <p>
-        As a young Malawian creative, he continues to
-        develop his literary voice with the ambition of
-        producing meaningful works that can connect with
-        readers and leave a lasting impression.
-      </p>
-
-      <div class="signature">
-        Asher The Poet
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-  </section>  <!-- FAITH -->  <section class="faith" id="faith"><div class="container">
-
-  <div class="section-heading">
-
-    <span>Faith & Purpose</span>
-
-    <h2>A Servant of God</h2>
-
-    <div class="gold-line"></div>
-
-  </div>
-
-
-  <div class="faith-card">
-
-    <div class="cross">
-      ✝
-    </div>
-
-    <h3>
-      Faith Is Part of the Journey
-    </h3>
-
-    <p>
-      Beyond poetry and writing, Asher The Poet identifies
-      himself as a <strong>Servant of God</strong>.
-      His faith is an important part of his identity,
-      values, purpose, and personal journey.
-    </p>
-
-    <p>
-      He seeks to use the gifts he has been given
-      responsibly — using words to encourage,
-      inspire, teach, reflect, and communicate
-      messages of hope, love, wisdom, faith,
-      and purpose.
-    </p>
-
-    <p class="faith-quote">
-      “Let my words carry meaning, my life carry purpose,
-      and my gifts serve God.”
-    </p>
-
-  </div>
-
-</div>
-
-  </section>  <!-- BOOKS -->  <section id="books"><div class="container">
-
-  <div class="section-heading">
-
-    <span>Literary Works</span>
-
-    <h2>Books</h2>
-
-    <div class="gold-line"></div>
-
-  </div>
-
-  <p class="books-intro">
-    A growing collection of works exploring
-    love, wisdom, personal development,
-    human experience, and the power of thought.
-  </p>
-
-
-  <div class="book-grid">
-
-    <article class="book">
-
-      <div>
-
-        <div class="book-number">
-          BOOK 01
-        </div>
-
-        <h3>
-          The Broken Silence
-        </h3>
-
-        <p>
-          A literary exploration of thoughts,
-          experiences, emotions, and stories
-          that often remain unspoken.
-        </p>
-
-      </div>
-
-      <div class="book-status">
-        Literary Work
-      </div>
-
-    </article>
-
-
-    <article class="book">
-
-      <div>
-
-        <div class="book-number">
-          BOOK 02
-        </div>
-
-        <h3>
-          The Psychology of Love
-        </h3>
-
-        <p>
-          An exploration of love, emotional connection,
-          relationships, human behavior, and the
-          psychological dimensions of love.
-        </p>
-
-      </div>
-
-      <div class="book-status">
-        Literary Work
-      </div>
-
-    </article>
-
-
-    <article class="book">
-
-      <div>
-
-        <div class="book-number">
-          BOOK 03
-        </div>
-
-        <h3>
-          Rise Above Average
-        </h3>
-
-        <p>
-          A motivational work centered on growth,
-          ambition, discipline, purpose, and the
-          pursuit of becoming more than ordinary.
-        </p>
-
-      </div>
-
-      <div class="book-status">
-        Literary Work
-      </div>
-
-    </article>
-
-
-    <article class="book">
-
-      <div>
-
-        <div class="book-number">
-          BOOK 04
-        </div>
-
-        <h3>
-          The Wisdom of Love
-        </h3>
-
-        <p>
-          A reflective work exploring love,
-          emotional understanding, relationships,
-          wisdom, and the lessons that love teaches.
-        </p>
-
-      </div>
-
-      <div class="book-status">
-        Literary Work
-      </div>
-
-    </article>
-
-  </div>
-
-</div>
-
-  </section>  <!-- POETRY -->  <section class="poetry" id="poetry"><div class="container">
-
-  <div class="section-heading">
-
-    <span>Words & Reflection</span>
-
-    <h2>Poetry</h2>
-
-    <div class="gold-line"></div>
-
-  </div>
-
-
-  <div class="poetry-card">
-
-    <blockquote>
-      “Sometimes the words we fear to speak
-      become the poems our hearts need to hear.”
-    </blockquote>
-
-    <cite>
-      — ASHER THE POET
-    </cite>
-
-  </div>
-
-</div>
-
-  </section>  <!-- CONTACT -->  <section id="contact"><div class="container">
-
-  <div class="section-heading">
-
-    <span>Get In Touch</span>
-
-    <h2>Contact</h2>
-
-    <div class="gold-line"></div>
-
-  </div>
-
-
-  <div class="contact-card">
-
-    <p>
-      For books, poetry, collaborations,
-      performances, creative projects,
-      or other enquiries, connect with
-      Asher The Poet.
-    </p>
-
-    <a
-      class="btn"
-      href="mailto:jacobsmphasquare@gmail.com">
-      Email Asher
-    </a>
-
-    <a
-      class="btn btn-outline"
-      href="https://wa.me/265987569509">
-      WhatsApp
-    </a>
-
-  </div>
-
-</div>
-
-  </section>  <!-- FOOTER -->  <footer><div class="footer-name">
-  <strong>ASHER THE POET</strong>
 </div>
 
 <p>
-  Poet • Author • Storyteller • Servant of God
+    © 2026 Asher The Poet.
+    All rights reserved.
 </p>
 
-<p style="margin-top:10px;">
-  © 2026 Asher The Poet.
-  All rights reserved.
-</p>
-
-  </footer></body>
+</footer></body>
 </html>
