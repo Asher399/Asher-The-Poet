@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Asher The Poet | Official Website</title>
 
 <meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha. Poet, author, storyteller and servant of God.">
 <meta name="author" content="Jacob Stephen Mphampha">
-
 <meta name="theme-color" content="#080808">
 
 <meta property="og:title" content="Asher The Poet | Official Website">
-<meta property="og:description" content="Official website of Asher The Poet — Jacob Stephen Mphampha.">
+<meta property="og:description" content="Poet • Author • Storyteller • Servant of God">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,56 +21,43 @@
 
 <style>
 
-/* =====================================================
-   ROOT
-===================================================== */
-
 :root{
-    --bg:#070707;
-    --bg2:#0d0d0d;
-    --card:#111111;
-    --gold:#d4ad58;
-    --gold2:#f0d58d;
-    --white:#f7f3eb;
-    --muted:#96928a;
-    --line:rgba(212,173,88,.18);
-    --soft-line:rgba(255,255,255,.07);
+    --gold:#d4af37;
+    --gold-light:#f4d675;
+    --gold-dark:#8e7420;
+    --black:#050505;
+    --black2:#0b0b0b;
+    --black3:#111111;
+    --white:#f7f5ef;
+    --muted:#a6a6a6;
+    --line:rgba(212,175,55,.22);
 }
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
     scroll-behavior:smooth;
 }
 
 body{
-    background:var(--bg);
+    background:
+        radial-gradient(circle at 80% 10%,rgba(212,175,55,.08),transparent 30%),
+        radial-gradient(circle at 10% 70%,rgba(212,175,55,.05),transparent 30%),
+        var(--black);
     color:var(--white);
     font-family:"DM Sans",sans-serif;
     overflow-x:hidden;
 }
 
-body::before{
+body:before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
-    z-index:9998;
-    opacity:.025;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
-}
-
-::selection{
-    background:var(--gold);
-    color:#000;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    z-index:9999;
 }
 
 a{
@@ -85,348 +70,1404 @@ img{
     display:block;
 }
 
-button{
-    font:inherit;
+.container{
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-/* =====================================================
-   LOADER
-===================================================== */
+.gold{
+    color:var(--gold);
+}
+
+/* LOADER */
 
 .loader{
     position:fixed;
     inset:0;
-    z-index:10000;
     background:#050505;
     display:flex;
-    justify-content:center;
     align-items:center;
-    transition:opacity .8s ease, visibility .8s ease;
-}
-
-.loader.hide{
-    opacity:0;
-    visibility:hidden;
+    justify-content:center;
+    z-index:10000;
+    animation:loaderOut 1s ease 1.5s forwards;
 }
 
 .loader-content{
     text-align:center;
 }
 
-.loader-title{
+.loader-logo{
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(2.4rem,7vw,4.5rem);
-    letter-spacing:5px;
-    color:var(--gold2);
+    font-size:42px;
+    letter-spacing:8px;
+    color:var(--gold);
+    animation:pulse 1.2s infinite alternate;
 }
 
 .loader-line{
-    width:90px;
+    width:130px;
     height:1px;
-    margin:18px auto;
     background:var(--gold);
-    animation:loaderLine 1.5s infinite;
+    margin:18px auto;
 }
 
-.loader-sub{
-    color:#777;
-    font-size:.62rem;
+.loader-small{
+    color:#888;
+    font-size:11px;
     letter-spacing:4px;
-    text-transform:uppercase;
 }
 
-@keyframes loaderLine{
-    0%,100%{transform:scaleX(.3);opacity:.3}
-    50%{transform:scaleX(1);opacity:1}
+@keyframes pulse{
+    from{opacity:.45;transform:scale(.98)}
+    to{opacity:1;transform:scale(1)}
 }
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+@keyframes loaderOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+    }
+}
+
+/* NAVBAR */
 
 .navbar{
     position:fixed;
     top:0;
     left:0;
-    right:0;
+    width:100%;
     z-index:5000;
-    padding:20px 6%;
+    background:rgba(5,5,5,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav-inner{
+    min-height:78px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    background:rgba(7,7,7,.72);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,.04);
+    justify-content:space-between;
 }
 
-.brand{
+.logo{
     display:flex;
-    flex-direction:column;
+    align-items:center;
+    gap:13px;
 }
 
-.brand-main{
+.logo-mark{
+    width:38px;
+    height:38px;
+    border:1px solid var(--gold);
+    display:grid;
+    place-items:center;
+    color:var(--gold);
     font-family:"Cormorant Garamond",serif;
-    color:var(--gold2);
-    font-size:1.65rem;
-    font-weight:700;
-    letter-spacing:2px;
+    font-size:20px;
+    transform:rotate(45deg);
 }
 
-.brand-small{
-    color:#777;
-    font-size:.52rem;
+.logo-mark span{
+    transform:rotate(-45deg);
+}
+
+.logo-text strong{
+    display:block;
+    font-size:13px;
     letter-spacing:3px;
-    text-transform:uppercase;
+}
+
+.logo-text small{
+    color:var(--gold);
+    letter-spacing:2px;
+    font-size:8px;
 }
 
 .nav-links{
     display:flex;
-    align-items:center;
     gap:30px;
+    align-items:center;
 }
 
 .nav-links a{
-    color:#aaa;
-    font-size:.67rem;
-    letter-spacing:1.8px;
+    font-size:11px;
+    letter-spacing:1.5px;
     text-transform:uppercase;
-    transition:.3s ease;
+    color:#bbb;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--gold2);
+    color:var(--gold);
 }
 
-.nav-cta{
-    border:1px solid var(--line);
+.nav-contact{
+    border:1px solid var(--gold);
     padding:11px 17px;
-    color:var(--gold2)!important;
+    color:var(--gold)!important;
 }
 
-.menu-btn{
+.menu{
     display:none;
-    border:0;
-    background:none;
-    color:var(--white);
-    font-size:1.7rem;
+    font-size:28px;
+    color:var(--gold);
     cursor:pointer;
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero{
     min-height:100vh;
-    padding:145px 8% 90px;
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    align-items:center;
-    gap:70px;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-glow{
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    right:-300px;
-    top:-300px;
-    background:radial-gradient(circle,rgba(212,173,88,.14),transparent 68%);
-    pointer-events:none;
-}
-
-.hero-glow2{
-    position:absolute;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    left:-300px;
-    bottom:-250px;
-    background:radial-gradient(circle,rgba(212,173,88,.07),transparent 68%);
-    pointer-events:none;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-
-.overline{
+    padding:150px 0 90px;
     display:flex;
     align-items:center;
-    gap:12px;
-    color:var(--gold2);
-    font-size:.65rem;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    margin-bottom:25px;
+    position:relative;
 }
 
-.overline::before{
-    content:"";
-    width:40px;
-    height:1px;
-    background:var(--gold);
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:5px;
+    margin-bottom:22px;
 }
 
 .hero h1{
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(4.5rem,9vw,9rem);
-    line-height:.78;
-    letter-spacing:-4px;
     font-weight:600;
+    font-size:clamp(58px,8vw,110px);
+    line-height:.82;
+    letter-spacing:-3px;
 }
 
 .hero h1 span{
+    color:var(--gold);
     display:block;
-    color:var(--gold2);
-    font-style:italic;
 }
 
-.hero-description{
-    max-width:650px;
-    color:#999;
+.hero-sub{
+    margin-top:28px;
+    color:#b7b7b7;
+    font-size:15px;
     line-height:1.9;
-    margin:35px 0;
-    font-size:.95rem;
+    max-width:560px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:14px;
     flex-wrap:wrap;
+    gap:13px;
+    margin-top:34px;
 }
 
 .btn{
-    min-height:52px;
-    padding:0 24px;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     gap:9px;
+    padding:14px 23px;
     border:1px solid var(--gold);
-    font-size:.65rem;
-    font-weight:700;
     text-transform:uppercase;
-    letter-spacing:1.6px;
+    font-size:10px;
+    letter-spacing:2px;
     transition:.35s;
 }
 
 .btn-primary{
     background:var(--gold);
-    color:#050505;
+    color:#080808;
 }
 
-.btn-primary:hover{
-    background:var(--gold2);
+.btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 15px 40px rgba(212,173,88,.14);
+    box-shadow:0 12px 35px rgba(212,175,55,.18);
 }
 
 .btn-outline{
-    color:var(--gold2);
+    color:var(--gold);
 }
 
-.btn-outline:hover{
-    background:var(--gold);
-    color:#000;
-    transform:translateY(-4px);
-}
-
-/* HERO PHOTO */
-
-.hero-visual{
+.hero-image-wrap{
     position:relative;
-    display:flex;
-    justify-content:center;
+    max-width:450px;
+    margin:auto;
 }
 
-.photo-outer{
-    position:relative;
-    width:min(450px,90%);
-}
-
-.photo-outer::before{
+.hero-image-wrap:before{
     content:"";
     position:absolute;
-    inset:25px -25px -25px 25px;
-    border:1px solid var(--line);
+    inset:-18px;
+    border:1px solid rgba(212,175,55,.25);
+    transform:rotate(3deg);
 }
 
-.photo-outer::after{
+.hero-image-wrap:after{
     content:"";
     position:absolute;
-    width:90px;
-    height:90px;
-    top:-18px;
-    right:-18px;
-    border-top:1px solid var(--gold);
-    border-right:1px solid var(--gold);
+    inset:18px -18px -18px 18px;
+    border:1px solid rgba(212,175,55,.12);
+    z-index:-1;
 }
 
-.author-photo{
+.hero-image{
     width:100%;
     aspect-ratio:4/5;
     object-fit:cover;
+    object-position:center;
+    filter:grayscale(10%);
     position:relative;
     z-index:2;
-    filter:contrast(1.05) saturate(.85);
-    border:10px solid #0b0b0b;
-    outline:1px solid var(--line);
 }
 
-.photo-caption{
+.hero-badge{
     position:absolute;
+    bottom:22px;
+    left:-28px;
     z-index:3;
-    bottom:25px;
-    left:-20px;
-    padding:17px 22px;
-    background:rgba(8,8,8,.92);
-    backdrop-filter:blur(15px);
+    background:#090909;
     border:1px solid var(--line);
+    padding:17px 20px;
+    box-shadow:0 20px 50px #000;
 }
 
-.photo-caption strong{
+.hero-badge strong{
     display:block;
-    color:var(--gold2);
+    color:var(--gold);
     font-family:"Cormorant Garamond",serif;
-    font-size:1.35rem;
+    font-size:23px;
 }
 
-.photo-caption span{
-    color:#777;
-    font-size:.58rem;
+.hero-badge small{
+    color:#888;
+    font-size:9px;
     letter-spacing:2px;
-    text-transform:uppercase;
 }
 
-/* =====================================================
-   MARQUEE
-===================================================== */
+/* MARQUEE */
 
 .marquee{
-    overflow:hidden;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
     padding:17px 0;
+    overflow:hidden;
     white-space:nowrap;
 }
 
 .marquee-track{
     display:inline-block;
-    animation:move 25s linear infinite;
+    animation:marquee 25s linear infinite;
 }
 
 .marquee span{
-    margin:0 30px;
-    color:#666;
+    margin:0 35px;
     font-family:"Cormorant Garamond",serif;
-    font-size:1.2rem;
-    letter-spacing:3px;
+    font-size:20px;
+    color:#888;
 }
 
 .marquee b{
+    color:var(--gold);
+}
+
+@keyframes marquee{
+    to{transform:translateX(-50%)}
+}
+
+/* GENERAL SECTIONS */
+
+section{
+    padding:110px 0;
+}
+
+.section-top{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    align-items:end;
+    margin-bottom:55px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:13px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(42px,6vw,70px);
+    font-weight:500;
+    line-height:.95;
+}
+
+.section-description{
+    max-width:420px;
+    color:#8e8e8e;
+    line-height:1.8;
+    font-size:13px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+}
+
+.about-number{
+    font-family:"Cormorant Garamond",serif;
+    font-size:150px;
+    color:rgba(212,175,55,.08);
+    line-height:.7;
+}
+
+.about-copy{
+    color:#aaa;
+    line-height:1.95;
+    font-size:15px;
+}
+
+.about-copy p{
+    margin-bottom:22px;
+}
+
+.signature{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    font-size:29px;
+    font-style:italic;
+    margin-top:30px;
+}
+
+/* BOOKS */
+
+.books{
+    background:
+        linear-gradient(rgba(255,255,255,.018),rgba(255,255,255,.018));
+}
+
+.books-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.book-card{
+    background:linear-gradient(145deg,#101010,#080808);
+    border:1px solid rgba(255,255,255,.08);
+    padding:25px;
+    transition:.4s;
+}
+
+.book-card:hover{
+    border-color:rgba(212,175,55,.5);
+    transform:translateY(-8px);
+}
+
+.book-cover{
+    height:500px;
+    overflow:hidden;
+    background:#161616;
+    position:relative;
+}
+
+.book-cover img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:.6s;
+}
+
+.book-card:hover .book-cover img{
+    transform:scale(1.025);
+}
+
+.book-info{
+    padding:25px 5px 5px;
+}
+
+.book-number{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+.book-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    margin:8px 0;
+}
+
+.book-info p{
+    color:#888;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* FEATURED */
+
+.featured{
+    position:relative;
+}
+
+.featured-box{
+    border:1px solid var(--line);
+    min-height:470px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 70% 50%,rgba(212,175,55,.1),transparent 40%),
+        #090909;
+}
+
+.featured-content{
+    padding:70px;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.featured-content h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(42px,5vw,70px);
+    line-height:.9;
+    font-weight:500;
+}
+
+.featured-content h3 span{
+    color:var(--gold);
+}
+
+.featured-content p{
+    color:#929292;
+    line-height:1.8;
+    margin:25px 0;
+    max-width:500px;
+}
+
+.featured-art{
+    display:grid;
+    place-items:center;
+    position:relative;
+}
+
+.featured-art:before{
+    content:"MIND";
+    font-family:"Cormorant Garamond",serif;
+    font-size:150px;
+    color:rgba(212,175,55,.06);
+    transform:rotate(-90deg);
+}
+
+/* PHILOSOPHY */
+
+.philosophy-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.philosophy-card{
+    padding:38px 30px;
+    border:1px solid rgba(255,255,255,.08);
+    min-height:220px;
+    transition:.35s;
+}
+
+.philosophy-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-7px);
+}
+
+.philosophy-icon{
+    color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
+    font-size:45px;
+}
+
+.philosophy-card h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:30px;
+    margin:10px 0;
+}
+
+.philosophy-card p{
+    color:#858585;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* QUOTE */
+
+.quote-section{
+    text-align:center;
+    padding:130px 0;
+    background:
+        radial-gradient(circle,rgba(212,175,55,.09),transparent 45%);
+}
+
+.quote-mark{
+    color:var(--gold);
+    font-family:"Cormorant Garamond",serif;
+    font-size:80px;
+    line-height:.5;
+}
+
+.quote{
+    max-width:900px;
+    margin:25px auto;
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(32px,5vw,62px);
+    line-height:1.05;
+}
+
+.quote-author{
+    color:#777;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:9px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    border:1px solid var(--line);
+    padding:70px;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,rgba(212,175,55,.08),transparent 45%),
+        #090909;
+}
+
+.contact-box h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(45px,6vw,75px);
+    font-weight:500;
+}
+
+.contact-box p{
+    color:#888;
+    max-width:560px;
+    margin:20px auto 30px;
+    line-height:1.8;
+    font-size:13px;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.contact-btn{
+    min-width:190px;
+}
+
+.contact-btn svg{
+    width:18px;
+    height:18px;
+    fill:currentColor;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:40px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+}
+
+.footer-name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+    color:var(--gold);
+}
+
+.footer-copy{
+    color:#666;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:#25D366;
+    display:grid;
+    place-items:center;
+    z-index:4000;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+.whatsapp-float svg{
+    width:27px;
+    height:27px;
+    fill:white;
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        padding:25px;
+        background:rgba(5,5,5,.97);
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:16px 5px;
+        border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-contact{
+        text-align:center;
+        margin-top:10px;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        padding-top:130px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:65px;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .hero-image-wrap{
+        max-width:390px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .about-number{
+        font-size:100px;
+    }
+
+    .books-grid{
+        grid-template-columns:1fr;
+    }
+
+    .book-cover{
+        height:480px;
+    }
+
+    .featured-box{
+        grid-template-columns:1fr;
+    }
+
+    .featured-art{
+        min-height:160px;
+    }
+
+    .featured-content{
+        padding:45px 30px;
+    }
+
+    .philosophy-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        padding:55px 25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:500px){
+
+    .logo-text strong{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-2px;
+    }
+
+    .hero-sub{
+        font-size:13px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .hero-badge{
+        left:10px;
+        bottom:10px;
+    }
+
+    .book-cover{
+        height:420px;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:20px;
+    }
+
+    .featured-art:before{
+        font-size:90px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader">
+    <div class="loader-content">
+        <div class="loader-logo">ASHER</div>
+        <div class="loader-line"></div>
+        <div class="loader-small">THE POET</div>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+            <div class="logo-mark">
+                <span>A</span>
+            </div>
+
+            <div class="logo-text">
+                <strong>ASHER THE POET</strong>
+                <small>OFFICIAL WEBSITE</small>
+            </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#books">Books</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#contact" class="nav-contact">Contact</a>
+        </nav>
+
+        <div class="menu" onclick="toggleMenu()">☰</div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<main id="home">
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-label">
+                Poet • Author • Storyteller • Servant of God
+            </div>
+
+            <h1>
+                ASHER
+                <span>THE POET</span>
+            </h1>
+
+            <p class="hero-sub">
+                Welcome to the official world of Jacob Stephen Mphampha —
+                a creative voice exploring love, life, wisdom, purpose,
+                human nature and the power of the mind.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#books" class="btn btn-primary">
+                    Explore My Books
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Discover My Story
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image-wrap reveal">
+
+            <img
+                src="asherpng.JPG"
+                alt="Jacob Stephen Mphampha — Asher The Poet"
+                class="hero-image"
+            >
+
+            <div class="hero-badge">
+                <strong>Jacob Stephen Mphampha</strong>
+                <small>AS<strong class="gold">HER</strong> THE POET</small>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MARQUEE -->
+<div class="marquee">
+    <div class="marquee-track">
+        <span>THINK <b>✦</b></span>
+        <span>CREATE <b>✦</b></span>
+        <span>INSPIRE <b>✦</b></span>
+        <span>LOVE <b>✦</b></span>
+        <span>WISDOM <b>✦</b></span>
+        <span>PURPOSE <b>✦</b></span>
+        <span>THINK <b>✦</b></span>
+        <span>CREATE <b>✦</b></span>
+        <span>INSPIRE <b>✦</b></span>
+        <span>LOVE <b>✦</b></span>
+    </div>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <div>
+                <div class="eyebrow">01 — The Author</div>
+
+                <h2 class="section-title">
+                    Words with<br>
+                    <span class="gold">meaning.</span>
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Poetry is more than words. It is emotion,
+                thought, experience and truth transformed
+                into something that can live beyond the moment.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="reveal">
+                <div class="about-number">01</div>
+            </div>
+
+            <div class="about-copy reveal">
+
+                <p>
+                    <strong class="gold">Jacob Stephen Mphampha</strong>,
+                    professionally known as <strong>Asher The Poet</strong>,
+                    is a poet, author and storyteller whose work is inspired
+                    by the realities of life, relationships, human behaviour,
+                    personal growth and faith.
+                </p>
+
+                <p>
+                    Through poetry and books, Asher seeks to transform
+                    thoughts into words and words into ideas that challenge,
+                    encourage and inspire people to see life differently.
+                </p>
+
+                <p>
+                    His creative journey is built around one simple belief:
+                    <strong class="gold">
+                        the right words can change the way a person thinks.
+                    </strong>
+                </p>
+
+                <div class="signature">
+                    — Asher The Poet
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKS -->
+<section id="books" class="books">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <div>
+                <div class="eyebrow">02 — Publications</div>
+
+                <h2 class="section-title">
+                    Stories that<br>
+                    <span class="gold">speak.</span>
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Books created to provoke thought, awaken emotion
+                and encourage readers to become better versions
+                of themselves.
+            </p>
+
+        </div>
+
+
+        <div class="books-grid">
+
+            <!-- BOOK ONE -->
+            <article class="book-card reveal">
+
+                <div class="book-cover">
+
+                    <img
+                        src="broken-silencepng.png"
+                        alt="The Broken Silence book cover"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <div class="book-number">
+                        PUBLICATION 01
+                    </div>
+
+                    <h3 class="book-title">
+                        The Broken Silence
+                    </h3>
+
+                    <p>
+                        A journey through emotions, hidden thoughts,
+                        experiences and the courage to finally give
+                        a voice to what has remained unspoken.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOOK TWO -->
+            <article class="book-card reveal">
+
+                <div class="book-cover">
+
+                    <img
+                        src="rise-above-averagepng.png"
+                        alt="Rise Above Average book cover"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <div class="book-number">
+                        PUBLICATION 02
+                    </div>
+
+                    <h3 class="book-title">
+                        Rise Above Average
+                    </h3>
+
+                    <p>
+                        A message about growth, discipline,
+                        courage and developing the mindset required
+                        to rise beyond ordinary expectations.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PROJECT -->
+<section class="featured">
+
+    <div class="container">
+
+        <div class="featured-box reveal">
+
+            <div class="featured-content">
+
+                <div class="eyebrow">
+                    Featured Project
+                </div>
+
+                <h3>
+                    Billions Begin<br>
+                    <span>In The Mind.</span>
+                </h3>
+
+                <p>
+                    Before wealth becomes visible, an idea exists
+                    in the mind. This upcoming work explores mindset,
+                    ambition, discipline, vision and the thinking
+                    that can shape a person's future.
+                </p>
+
+                <a href="#contact" class="btn btn-outline">
+                    Stay Connected
+                </a>
+
+            </div>
+
+            <div class="featured-art"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+
+    <div class="container">
+
+        <div class="section-top reveal">
+
+            <div>
+                <div class="eyebrow">03 — Philosophy</div>
+
+                <h2 class="section-title">
+                    Think.<br>
+                    Create.<br>
+                    <span class="gold">Inspire.</span>
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Three principles behind the creative identity
+                of Asher The Poet.
+            </p>
+
+        </div>
+
+
+        <div class="philosophy-grid">
+
+            <div class="philosophy-card reveal">
+
+                <div class="philosophy-icon">01</div>
+
+                <h3>Think</h3>
+
+                <p>
+                    Question ideas. Explore possibilities.
+                    Develop a mind capable of seeing beyond
+                    what is immediately visible.
+                </p>
+
+            </div>
+
+
+            <div class="philosophy-card reveal">
+
+                <div class="philosophy-icon">02</div>
+
+                <h3>Create</h3>
+
+                <p>
+                    Turn thoughts, emotions and experiences
+                    into meaningful art, stories and ideas
+                    that can reach other people.
+                </p>
+
+            </div>
+
+
+            <div class="philosophy-card reveal">
+
+                <div class="philosophy-icon">03</div>
+
+                <h3>Inspire</h3>
+
+                <p>
+                    Leave people better than you found them.
+                    Every word should carry the possibility
+                    of awakening something positive.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+<section class="quote-section">
+
+    <div class="container reveal">
+
+        <div class="quote-mark">“</div>
+
+        <div class="quote">
+            Words become powerful when they give
+            someone the courage to think differently.
+        </div>
+
+        <div class="quote-author">
+            Asher The Poet
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <div class="eyebrow">
+                04 — Connect
+            </div>
+
+            <h2>
+                Let the conversation<br>
+                <span class="gold">begin.</span>
+            </h2>
+
+            <p>
+                For collaborations, literary conversations,
+                creative opportunities and other enquiries,
+                connect with Asher The Poet directly.
+            </p>
+
+            <div class="contact-buttons">
+
+                <!-- WhatsApp -->
+                <a
+                    href="https://wa.me/265987569509"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary contact-btn"
+                    aria-label="Contact Asher The Poet on WhatsApp"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.45-8.43ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.84 9.84 0 0 1-1.51-5.27C2.2 6.47 6.63 2.04 12.06 2.04c2.63 0 5.1 1.03 6.96 2.89a9.83 9.83 0 0 1 2.88 6.99c0 5.44-4.43 9.88-9.83 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+                    </svg>
+
+                    WhatsApp
+
+                </a>
+
+
+                <!-- Email -->
+                <a
+                    href="mailto:mphamphajacob@gmail.com"
+                    class="btn btn-outline contact-btn"
+                    aria-label="Send an email to Asher The Poet"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+                    </svg>
+
+                    Email
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container footer-inner">
+
+        <div class="footer-name">
+            Asher The Poet
+        </div>
+
+        <div class="footer-copy">
+            © 2026 Jacob Stephen Mphampha · Official Website
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a
+    href="https://wa.me/265987569509"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+>
+
+    <svg viewBox="0 0 24 24">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.45-8.43ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.84 9.84 0 0 1-1.51-5.27C2.2 6.47 6.63 2.04 12.06 2.04c2.63 0 5.1 1.03 6.96 2.89a9.83 9.83 0 0 1 2.88 6.99c0 5.44-4.43 9.88-9.83 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+
+</a>
+
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+
+/* CLOSE MOBILE MENU WHEN LINK IS CLICKED */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("show");
+    });
+
+});
+
+
+/* SCROLL REVEAL */
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    reveals.forEach(function(element){
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 80){
+            element.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealOnScroll);
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+        revealOnScroll();
+    },500);
+
+});
+
+</script>
+
+</body>
+</html>
