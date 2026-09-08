@@ -1,1037 +1,2632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Asher The Poet | Jacob Stephen Mphampha</title>
-
-  <meta name="description" content="Official website of Jacob Stephen Mphampha, also known as Asher The Poet — author, poet, inspirational writer and creative thinker.">
-  <meta name="author" content="Jacob Stephen Mphampha">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #080808;
-      --dark: #101010;
-      --dark2: #171717;
-      --gold: #d4af37;
-      --gold-light: #f2d675;
-      --cream: #f5f0e6;
-      --white: #ffffff;
-      --gray: #b5b5b5;
-      --border: rgba(212,175,55,0.25);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Montserrat", sans-serif;
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(8,8,8,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(212,175,55,0.12);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: white;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      color: #ddd;
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 27px;
-      color: var(--gold);
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(212,175,55,.15), transparent 35%),
-        radial-gradient(circle at 10% 80%, rgba(212,175,55,.08), transparent 30%),
-        linear-gradient(135deg, #070707, #151515);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(212,175,55,.12);
-      border-radius: 50%;
-      right: -150px;
-      top: 120px;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: auto;
-      padding: 130px 25px 80px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(60px, 10vw, 120px);
-      line-height: .85;
-      max-width: 900px;
-      font-weight: 700;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero-subtitle {
-      margin-top: 30px;
-      max-width: 700px;
-      font-size: 18px;
-      color: #cfcfcf;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 35px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 25px;
-      border-radius: 3px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: .3s;
-      cursor: pointer;
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #090909;
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-light);
-      transform: translateY(-3px);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: #080808;
-      transform: translateY(-3px);
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 100px 25px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 1;
-      margin-bottom: 30px;
-    }
-
-    .section-title span {
-      color: var(--gold);
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #0e0e0e;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .portrait-box {
-      min-height: 500px;
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(145deg, rgba(212,175,55,.12), transparent),
-        #151515;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .portrait-box::after {
-      content: "ASHER";
-      position: absolute;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 100px;
-      color: rgba(212,175,55,.05);
-      transform: rotate(-90deg);
-    }
-
-    .portrait-placeholder {
-      text-align: center;
-      z-index: 1;
-      padding: 30px;
-    }
-
-    .portrait-placeholder strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 45px;
-      color: var(--gold);
-    }
-
-    .about-text p {
-      color: #c8c8c8;
-      margin-bottom: 20px;
-    }
-
-    .quote {
-      border-left: 3px solid var(--gold);
-      padding: 15px 20px;
-      margin: 30px 0;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 27px;
-      font-style: italic;
-      color: var(--cream);
-    }
-
-    /* BOOKS */
-
-    .books {
-      background: var(--black);
-    }
-
-    .books-intro {
-      max-width: 700px;
-      color: var(--gray);
-      margin-bottom: 50px;
-    }
-
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .book-card {
-      background: #131313;
-      border: 1px solid rgba(255,255,255,.07);
-      transition: .35s;
-      overflow: hidden;
-    }
-
-    .book-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border);
-    }
-
-    .book-cover {
-      height: 350px;
-      background:
-        linear-gradient(145deg, #191919, #29220e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .book-cover h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 35px;
-      color: var(--gold);
-    }
-
-    .book-info {
-      padding: 25px;
-    }
-
-    .book-info h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .book-info p {
-      color: #aaa;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    /* POETRY */
-
-    .poetry {
-      background:
-        linear-gradient(rgba(10,10,10,.94), rgba(10,10,10,.97)),
-        radial-gradient(circle at center, #493d18, #080808);
-      text-align: center;
-    }
-
-    .poem {
-      max-width: 800px;
-      margin: 40px auto 0;
-      padding: 45px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.025);
-    }
-
-    .poem p {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(24px, 4vw, 36px);
-      line-height: 1.35;
-      font-style: italic;
-      color: var(--cream);
-    }
-
-    .poem-author {
-      margin-top: 25px;
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    /* VALUES */
-
-    .values {
-      background: #0f0f0f;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .value {
-      padding: 35px 25px;
-      border: 1px solid rgba(212,175,55,.15);
-      background: #151515;
-    }
-
-    .value-number {
-      color: var(--gold);
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-
-    .value h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
-      margin: 15px 0 8px;
-    }
-
-    .value p {
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: var(--black);
-    }
-
-    .contact-box {
-      padding: 60px;
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at 90% 10%, rgba(212,175,55,.12), transparent 35%),
-        #121212;
-      text-align: center;
-    }
-
-    .contact-box h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(45px, 7vw, 75px);
-      line-height: 1;
-    }
-
-    .contact-box p {
-      color: #aaa;
-      max-width: 650px;
-      margin: 20px auto 30px;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 45px 25px;
-      background: #050505;
-      border-top: 1px solid rgba(212,175,55,.12);
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-family: "Cormorant Garamond", serif;
-      color: var(--gold);
-      font-size: 35px;
-      font-weight: 700;
-    }
-
-    footer p {
-      color: #777;
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-
-    .socials a {
-      color: #aaa;
-      font-size: 13px;
-      transition: .3s;
-    }
-
-    .socials a:hover {
-      color: var(--gold);
-    }
-
-    /* WHATSAPP FLOATING BUTTON */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 27px;
-      z-index: 999;
-      box-shadow: 0 8px 25px rgba(0,0,0,.4);
-      transition: .3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background: #090909;
-        flex-direction: column;
-        padding: 25px;
-        gap: 20px;
-        display: none;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .portrait-box {
-        min-height: 350px;
-      }
-
-      .books-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .values-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 65px;
-      }
-
-      .contact-box {
-        padding: 40px 20px;
-      }
-
-      .poem {
-        padding: 30px 20px;
-      }
-    }
-
-    @media (max-width: 450px) {
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      section {
-        padding: 75px 18px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-buttons {
-        width: 100%;
-      }
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Asher The Poet | Jacob Stephen Mphampha</title>
+
+<meta name="description"
+content="The official digital home of Jacob Stephen Mphampha, known as Asher The Poet — author, poet, creative thinker and visionary.">
+
+<meta name="author" content="Jacob Stephen Mphampha">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   CORE
+===================================================== */
+
+:root{
+
+--black:#050505;
+--dark:#0a0a0a;
+--dark2:#101010;
+--card:#121212;
+
+--gold:#d4af37;
+--gold2:#f3d878;
+
+--white:#ffffff;
+--soft:#dddddd;
+--muted:#8e8e8e;
+
+--line:rgba(212,175,55,.20);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"DM Sans",sans-serif;
+
+background:var(--black);
+
+color:white;
+
+line-height:1.7;
+
+overflow-x:hidden;
+
+}
+
+::selection{
+background:var(--gold);
+color:#000;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.container{
+
+width:min(1180px,calc(100% - 40px));
+
+margin:auto;
+
+}
+
+section{
+padding:120px 0;
+}
+
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+.loader{
+
+position:fixed;
+
+inset:0;
+
+background:#050505;
+
+z-index:99999;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-direction:column;
+
+transition:opacity .7s,visibility .7s;
+
+}
+
+.loader.hide{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-logo{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:55px;
+
+font-weight:700;
+
+color:var(--gold);
+
+}
+
+.loader-line{
+
+width:100px;
+
+height:1px;
+
+background:var(--gold);
+
+margin-top:10px;
+
+animation:load 1.5s infinite;
+
+}
+
+@keyframes load{
+
+0%{transform:scaleX(0)}
+
+50%{transform:scaleX(1)}
+
+100%{transform:scaleX(0)}
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:5000;
+
+transition:.4s;
+
+}
+
+.navbar.scrolled{
+
+background:rgba(5,5,5,.92);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid var(--line);
+
+}
+
+.nav{
+
+width:min(1180px,calc(100% - 40px));
+
+margin:auto;
+
+min-height:82px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:32px;
+
+font-weight:700;
+
+color:var(--gold);
+
+letter-spacing:1px;
+
+}
+
+.logo small{
+
+display:block;
+
+font-family:"DM Sans",sans-serif;
+
+font-size:7px;
+
+letter-spacing:4px;
+
+color:#999;
+
+text-transform:uppercase;
+
+margin-top:-7px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+.nav-links a{
+
+font-size:11px;
+
+font-weight:600;
+
+letter-spacing:.7px;
+
+color:#ddd;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:var(--gold);
+
+}
+
+.nav-contact{
+
+padding:10px 17px;
+
+border:1px solid var(--gold);
+
+color:var(--gold)!important;
+
+}
+
+.menu{
+
+display:none;
+
+font-size:27px;
+
+color:var(--gold);
+
+cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+min-height:100vh;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(circle at 75% 25%,
+rgba(212,175,55,.17),
+transparent 30%),
+
+radial-gradient(circle at 5% 90%,
+rgba(212,175,55,.08),
+transparent 25%),
+
+linear-gradient(135deg,#030303,#111);
+
+}
+
+.hero-grid{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1.05fr .95fr;
+
+align-items:center;
+
+gap:60px;
+
+padding-top:70px;
+
+}
+
+.hero-copy{
+
+position:relative;
+
+z-index:3;
+
+}
+
+.eyebrow{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:4px;
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+margin-bottom:23px;
+
+}
+
+.eyebrow:before{
+
+content:"";
+
+width:40px;
+
+height:1px;
+
+background:var(--gold);
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(70px,9vw,125px);
+
+line-height:.78;
+
+letter-spacing:-4px;
+
+font-weight:700;
+
+}
+
+.hero h1 span{
+
+color:var(--gold);
+
+}
+
+.hero-text{
+
+max-width:610px;
+
+margin-top:32px;
+
+color:#aaa;
+
+font-size:16px;
+
+}
+
+.hero-text strong{
+
+color:white;
+
+}
+
+.buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:13px;
+
+margin-top:32px;
+
+}
+
+.btn{
+
+min-height:49px;
+
+padding:0 23px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:2px;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:1.6px;
+
+text-transform:uppercase;
+
+transition:.3s;
+
+}
+
+.btn-gold{
+
+background:var(--gold);
+
+color:#070707;
+
+}
+
+.btn-gold:hover{
+
+background:var(--gold2);
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(212,175,55,.16);
+
+}
+
+.btn-outline{
+
+border:1px solid rgba(255,255,255,.2);
+
+color:white;
+
+}
+
+.btn-outline:hover{
+
+border-color:var(--gold);
+
+color:var(--gold);
+
+transform:translateY(-4px);
+
+}
+
+
+/* HERO PHOTO */
+
+.hero-visual{
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.photo-frame{
+
+width:min(430px,100%);
+
+height:590px;
+
+padding:9px;
+
+border:1px solid var(--line);
+
+position:relative;
+
+background:rgba(255,255,255,.025);
+
+}
+
+.photo-frame img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+object-position:center;
+
+}
+
+.photo-frame:before{
+
+content:"";
+
+position:absolute;
+
+left:-18px;
+
+bottom:-18px;
+
+width:95px;
+
+height:95px;
+
+border-left:2px solid var(--gold);
+
+border-bottom:2px solid var(--gold);
+
+}
+
+.photo-frame:after{
+
+content:"";
+
+position:absolute;
+
+right:-18px;
+
+top:-18px;
+
+width:95px;
+
+height:95px;
+
+border-right:2px solid var(--gold);
+
+border-top:2px solid var(--gold);
+
+}
+
+.photo-label{
+
+position:absolute;
+
+bottom:28px;
+
+left:-30px;
+
+background:rgba(5,5,5,.92);
+
+border:1px solid var(--line);
+
+padding:16px 22px;
+
+backdrop-filter:blur(15px);
+
+}
+
+.photo-label strong{
+
+display:block;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:24px;
+
+color:var(--gold);
+
+}
+
+.photo-label span{
+
+font-size:8px;
+
+letter-spacing:3px;
+
+color:#aaa;
+
+text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   MARQUEE
+===================================================== */
+
+.marquee{
+
+overflow:hidden;
+
+background:#0b0b0b;
+
+border-top:1px solid var(--line);
+
+border-bottom:1px solid var(--line);
+
+padding:19px 0;
+
+}
+
+.marquee-track{
+
+display:flex;
+
+width:max-content;
+
+animation:scroll 25s linear infinite;
+
+}
+
+.marquee-item{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:20px;
+
+color:#888;
+
+white-space:nowrap;
+
+margin-right:45px;
+
+}
+
+.marquee-item span{
+
+color:var(--gold);
+
+margin-left:45px;
+
+}
+
+@keyframes scroll{
+
+from{transform:translateX(0)}
+
+to{transform:translateX(-50%)}
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+background:#090909;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+.stat{
+
+text-align:center;
+
+padding:35px 20px;
+
+border-right:1px solid var(--line);
+
+}
+
+.stat:last-child{
+
+border-right:none;
+
+}
+
+.stat strong{
+
+display:block;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:48px;
+
+color:var(--gold);
+
+}
+
+.stat span{
+
+font-size:9px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#777;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+
+background:#0d0d0d;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:.8fr 1.2fr;
+
+gap:85px;
+
+align-items:center;
+
+}
+
+.kicker{
+
+color:var(--gold);
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+margin-bottom:13px;
+
+}
+
+.title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(50px,6vw,80px);
+
+line-height:.88;
+
+font-weight:600;
+
+}
+
+.title span{
+
+color:var(--gold);
+
+}
+
+.about-copy p{
+
+color:#999;
+
+font-size:15px;
+
+margin-bottom:20px;
+
+}
+
+.about-copy strong{
+
+color:white;
+
+}
+
+.quote{
+
+margin-top:32px;
+
+padding:25px;
+
+border-left:2px solid var(--gold);
+
+background:rgba(212,175,55,.035);
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:28px;
+
+font-style:italic;
+
+color:var(--soft);
+
+}
+
+
+/* =====================================================
+   BOOKS
+===================================================== */
+
+.books{
+
+background:#060606;
+
+}
+
+.section-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:end;
+
+gap:40px;
+
+margin-bottom:55px;
+
+}
+
+.section-head-text{
+
+max-width:470px;
+
+color:#858585;
+
+font-size:14px;
+
+}
+
+.books-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:28px;
+
+}
+
+.book-card{
+
+background:#111;
+
+border:1px solid rgba(255,255,255,.07);
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.book-card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--line);
+
+}
+
+.book-cover{
+
+height:500px;
+
+background:#151515;
+
+overflow:hidden;
+
+}
+
+.book-cover img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+transition:.5s;
+
+}
+
+.book-card:hover .book-cover img{
+
+transform:scale(1.04);
+
+}
+
+.book-body{
+
+padding:30px;
+
+}
+
+.book-number{
+
+font-size:9px;
+
+letter-spacing:3px;
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+}
+
+.book-body h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:40px;
+
+margin:4px 0 8px;
+
+}
+
+.book-body p{
+
+color:#8d8d8d;
+
+font-size:13px;
+
+margin-bottom:22px;
+
+}
+
+
+/* =====================================================
+   THIRD BOOK
+===================================================== */
+
+.mind-card{
+
+margin-top:28px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+background:
+
+radial-gradient(circle at 70% 20%,
+rgba(212,175,55,.14),
+transparent 35%),
+
+#111;
+
+border:1px solid var(--line);
+
+overflow:hidden;
+
+}
+
+.mind-content{
+
+padding:60px 45px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.mind-content h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:55px;
+
+line-height:.9;
+
+margin:10px 0 20px;
+
+}
+
+.mind-content h3 span{
+
+color:var(--gold);
+
+}
+
+.mind-content p{
+
+color:#999;
+
+max-width:480px;
+
+}
+
+.mind-art{
+
+min-height:400px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+}
+
+.mind-art:before{
+
+content:"";
+
+width:300px;
+
+height:300px;
+
+border:1px solid var(--line);
+
+border-radius:50%;
+
+position:absolute;
+
+}
+
+.mind-art h4{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+color:var(--gold);
+
+text-align:center;
+
+z-index:2;
+
+}
+
+
+/* =====================================================
+   PHILOSOPHY
+===================================================== */
+
+.philosophy{
+
+background:
+
+radial-gradient(circle at 50% 0%,
+rgba(212,175,55,.12),
+transparent 35%),
+
+#0c0c0c;
+
+}
+
+.center{
+
+text-align:center;
+
+max-width:750px;
+
+margin:auto;
+
+}
+
+.center p{
+
+color:#888;
+
+margin-top:20px;
+
+}
+
+.philosophy-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+margin-top:60px;
+
+}
+
+.philosophy-card{
+
+padding:40px 28px;
+
+background:rgba(255,255,255,.025);
+
+border:1px solid var(--line);
+
+transition:.35s;
+
+}
+
+.philosophy-card:hover{
+
+transform:translateY(-8px);
+
+border-color:var(--gold);
+
+}
+
+.number{
+
+color:var(--gold);
+
+font-size:10px;
+
+letter-spacing:3px;
+
+}
+
+.philosophy-card h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:34px;
+
+margin:15px 0 8px;
+
+}
+
+.philosophy-card p{
+
+font-size:13px;
+
+color:#888;
+
+}
+
+
+/* =====================================================
+   POETRY
+===================================================== */
+
+.poetry{
+
+padding:150px 0;
+
+background:#040404;
+
+position:relative;
+
+overflow:hidden;
+
+text-align:center;
+
+}
+
+.poetry:before{
+
+content:"ASHER";
+
+position:absolute;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:270px;
+
+color:rgba(212,175,55,.025);
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+white-space:nowrap;
+
+}
+
+.poetry-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.poetry-line{
+
+width:65px;
+
+height:1px;
+
+background:var(--gold);
+
+margin:25px auto;
+
+}
+
+.poem{
+
+max-width:850px;
+
+margin:auto;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(32px,5vw,55px);
+
+line-height:1.15;
+
+font-style:italic;
+
+color:var(--soft);
+
+}
+
+.author{
+
+margin-top:30px;
+
+font-size:9px;
+
+letter-spacing:4px;
+
+color:var(--gold);
+
+text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+
+background:#0b0b0b;
+
+}
+
+.contact-box{
+
+padding:90px 40px;
+
+text-align:center;
+
+border:1px solid var(--line);
+
+background:
+
+radial-gradient(circle at 50% 0%,
+rgba(212,175,55,.14),
+transparent 45%),
+
+#111;
+
+}
+
+.contact-box h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(55px,7vw,90px);
+
+line-height:.85;
+
+}
+
+.contact-box h2 span{
+
+color:var(--gold);
+
+}
+
+.contact-box p{
+
+max-width:620px;
+
+margin:25px auto;
+
+color:#888;
+
+}
+
+.contact-info{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+.contact-info div{
+
+font-size:11px;
+
+color:#777;
+
+}
+
+.contact-info strong{
+
+color:var(--gold);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+background:#030303;
+
+padding:60px 0 30px;
+
+border-top:1px solid var(--line);
+
+text-align:center;
+
+}
+
+.footer-logo{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:45px;
+
+font-weight:700;
+
+color:var(--gold);
+
+}
+
+.footer-tag{
+
+font-size:9px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+color:#666;
+
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:24px;
+
+flex-wrap:wrap;
+
+margin:27px 0;
+
+}
+
+.footer-links a{
+
+font-size:10px;
+
+color:#777;
+
+}
+
+.footer-links a:hover{
+
+color:var(--gold);
+
+}
+
+.copyright{
+
+color:#444;
+
+font-size:9px;
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+
+position:fixed;
+
+right:22px;
+
+bottom:22px;
+
+width:61px;
+
+height:61px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:25px;
+
+z-index:4000;
+
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.12);
+
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(35px);
+
+transition:opacity .9s ease,transform .9s ease;
+
+}
+
+.reveal.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+.nav-links{
+
+position:absolute;
+
+top:82px;
+
+left:0;
+
+width:100%;
+
+background:rgba(5,5,5,.98);
+
+backdrop-filter:blur(18px);
+
+display:none;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:25px;
+
+gap:20px;
+
+border-bottom:1px solid var(--line);
+
+}
+
+.nav-links.active{
+
+display:flex;
+
+}
+
+.menu{
+
+display:block;
+
+}
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+padding-top:130px;
+
+padding-bottom:80px;
+
+}
+
+.hero-visual{
+
+order:-1;
+
+}
+
+.photo-frame{
+
+height:470px;
+
+width:min(360px,100%);
+
+}
+
+.photo-label{
+
+left:-8px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.stat{
+
+border-bottom:1px solid var(--line);
+
+}
+
+.about-grid{
+
+grid-template-columns:1fr;
+
+gap:45px;
+
+}
+
+.books-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.mind-card{
+
+grid-template-columns:1fr;
+
+}
+
+.philosophy-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-head{
+
+display:block;
+
+}
+
+.section-head-text{
+
+margin-top:20px;
+
+}
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:500px){
+
+.container{
+
+width:calc(100% - 30px);
+
+}
+
+section{
+
+padding:85px 0;
+
+}
+
+.hero h1{
+
+font-size:59px;
+
+letter-spacing:-2px;
+
+}
+
+.hero-text{
+
+font-size:14px;
+
+}
+
+.buttons{
+
+display:grid;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.photo-frame{
+
+height:410px;
+
+}
+
+.book-cover{
+
+height:420px;
+
+}
+
+.book-body h3{
+
+font-size:34px;
+
+}
+
+.mind-content{
+
+padding:45px 25px;
+
+}
+
+.mind-content h3{
+
+font-size:45px;
+
+}
+
+.contact-box{
+
+padding:60px 20px;
+
+}
+
+.poetry{
+
+padding:110px 0;
+
+}
+
+.poetry:before{
+
+font-size:130px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.stat strong{
+
+font-size:38px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
 
-  <header>
-    <nav class="nav">
+<!-- LOADER -->
 
-      <a href="#home" class="logo">
-        Asher<span>.</span>
-      </a>
+<div class="loader" id="loader">
 
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="loader-logo">
+ASHER
+</div>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#about" onclick="closeMenu()">My Story</a></li>
-        <li><a href="#books" onclick="closeMenu()">Books</a></li>
-        <li><a href="#poetry" onclick="closeMenu()">Poetry</a></li>
-        <li><a href="#values" onclick="closeMenu()">Purpose</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-      </ul>
+<div class="loader-line"></div>
 
-    </nav>
-  </header>
+</div>
 
 
-  <!-- HERO -->
+<!-- NAVIGATION -->
 
-  <section class="hero" id="home">
+<header class="navbar" id="navbar">
 
-    <div class="hero-content">
+<nav class="nav">
 
-      <div class="eyebrow">
-        Author • Poet • Thinker • Visionary
-      </div>
+<a href="#home" class="logo">
 
-      <h1>
-        Words that<br>
-        <span>Awaken</span><br>
-        Minds.
-      </h1>
+Asher.
 
-      <p class="hero-subtitle">
-        I am <strong>Jacob Stephen Mphampha</strong>, known creatively as
-        <strong>Asher The Poet</strong> — a writer committed to turning
-        thoughts into words, experiences into lessons, and dreams into
-        something the world can read.
-      </p>
+<small>The Poet</small>
 
-      <div class="hero-buttons">
-        <a href="#books" class="btn btn-gold">
-          Explore My Books
-        </a>
+</a>
 
-        <a href="https://wa.me/265987569509" class="btn btn-outline" target="_blank">
-          WhatsApp Me
-        </a>
 
-        <a href="#about" class="btn btn-outline">
-          Discover My Story
-        </a>
-      </div>
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
 
-    </div>
 
-  </section>
+<ul class="nav-links" id="navLinks">
 
+<li><a href="#home">Home</a></li>
 
-  <!-- ABOUT / STORY -->
+<li><a href="#about">My Story</a></li>
 
-  <section class="about" id="about">
+<li><a href="#books">Books</a></li>
 
-    <div class="container">
+<li><a href="#philosophy">Philosophy</a></li>
 
-      <div class="about-grid">
+<li><a href="#poetry">Poetry</a></li>
 
-        <div class="portrait-box">
+<li>
+<a href="#contact" class="nav-contact">
+Contact
+</a>
+</li>
 
-          <div class="portrait-placeholder">
-            <strong>ASHER</strong>
-            <span>The Poet</span>
-          </div>
+</ul>
 
-        </div>
+</nav>
 
-        <div class="about-text">
+</header>
 
-          <div class="section-label">
-            My Story
-          </div>
 
-          <h2 class="section-title">
-            More than a <span>writer.</span>
-          </h2>
+<!-- HERO -->
 
-          <p>
-            My name is <strong>Jacob Stephen Mphampha</strong>, and I write
-            under the name <strong>Asher The Poet</strong>.
-          </p>
+<section class="hero" id="home">
 
-          <p>
-            Writing, to me, is more than putting words on a page. It is a
-            way of preserving thoughts, challenging ordinary thinking,
-            encouraging people and giving a voice to ideas that deserve
-            to be heard.
-          </p>
+<div class="container hero-grid">
 
-          <p>
-            My journey is driven by curiosity, faith, ambition and a desire
-            to become better while helping others see possibilities beyond
-            their present circumstances.
-          </p>
 
-          <p>
-            Through poetry, books, inspirational writing and creative
-            expression, I seek to create work that does not simply entertain
-            the reader — but leaves the reader thinking.
-          </p>
+<div class="hero-copy reveal">
 
-          <div class="quote">
-            "A writer does not merely write words. A writer leaves pieces
-            of thought in the minds of others."
-          </div>
+<div class="eyebrow">
+Author • Poet • Thinker
+</div>
 
-          <p>
-            Welcome to my world of words.
-          </p>
 
-        </div>
+<h1>
 
-      </div>
+Words<br>
 
-    </div>
+that <span>move</span><br>
 
-  </section>
+minds.
 
+</h1>
 
-  <!-- BOOKS -->
 
-  <section class="books" id="books">
+<p class="hero-text">
 
-    <div class="container">
+I am <strong>Jacob Stephen Mphampha</strong>, known creatively as
+<strong>Asher The Poet</strong> — an author and creative thinker
+using words to explore life, love, purpose, ambition, faith and
+the human mind.
 
-      <div class="section-label">
-        The Library
-      </div>
+</p>
 
-      <h2 class="section-title">
-        Stories. Ideas. <span>Books.</span>
-      </h2>
 
-      <p class="books-intro">
-        Explore the ideas and stories behind my writing. Each book represents
-        a different conversation — about life, love, growth, silence,
-        ambition and the human mind.
-      </p>
+<div class="buttons">
 
-      <div class="books-grid">
+<a href="#books" class="btn btn-gold">
+Explore My Books
+</a>
 
-        <article class="book-card">
 
-          <div class="book-cover">
-            <h3>The Broken<br>Silence</h3>
-          </div>
+<a
+href="https://wa.me/265987569509"
+target="_blank"
+class="btn btn-outline">
 
-          <div class="book-info">
-            <h3>The Broken Silence</h3>
+Chat With Me
 
-            <p>
-              A journey through the thoughts, struggles and truths that
-              people sometimes keep hidden.
-            </p>
+</a>
 
-            <a href="#contact" class="btn btn-outline">
-              Ask About Book
-            </a>
-          </div>
+</div>
 
-        </article>
+</div>
 
 
-        <article class="book-card">
+<div class="hero-visual reveal">
 
-          <div class="book-cover">
-            <h3>The Psychology<br>of Love</h3>
-          </div>
+<div class="photo-frame">
 
-          <div class="book-info">
-            <h3>The Psychology of Love</h3>
+<img
+src="asherpng.JPG"
+alt="Jacob Stephen Mphampha - Asher The Poet"
+>
 
-            <p>
-              An exploration of love, human connection, emotions and the
-              ideas that influence relationships.
-            </p>
 
-            <a href="#contact" class="btn btn-outline">
-              Ask About Book
-            </a>
-          </div>
+<div class="photo-label">
 
-        </article>
+<strong>
+Jacob Stephen Mphampha
+</strong>
 
+<span>
+Asher The Poet
+</span>
 
-        <article class="book-card">
+</div>
 
-          <div class="book-cover">
-            <h3>Billions Begin<br>in the Mind</h3>
-          </div>
+</div>
 
-          <div class="book-info">
-            <h3>Billions Begin in the Mind</h3>
+</div>
 
-            <p>
-              A motivational exploration of mindset, ambition, discipline,
-              ideas and the journey toward greatness.
-            </p>
 
-            <a href="#contact" class="btn btn-outline">
-              Ask About Book
-            </a>
-          </div>
+</div>
 
-        </article>
+</section>
 
-      </div>
 
-    </div>
+<!-- MARQUEE -->
 
-  </section>
+<div class="marquee">
 
+<div class="marquee-track">
 
-  <!-- POETRY -->
+<div class="marquee-item">
+WORDS <span>✦</span>
+</div>
 
-  <section class="poetry" id="poetry">
+<div class="marquee-item">
+IDEAS <span>✦</span>
+</div>
 
-    <div class="container">
+<div class="marquee-item">
+PURPOSE <span>✦</span>
+</div>
 
-      <div class="section-label">
-        From the Poet
-      </div>
+<div class="marquee-item">
+CREATIVITY <span>✦</span>
+</div>
 
-      <h2 class="section-title">
-        A few words from <span>Asher.</span>
-      </h2>
+<div class="marquee-item">
+INSPIRATION <span>✦</span>
+</div>
 
-      <div class="poem">
+<div class="marquee-item">
+WORDS <span>✦</span>
+</div>
 
-        <p>
-          "Do not measure your future by the size of your beginning.
-          Some of the greatest stories start as thoughts that nobody
-          else can see."
-        </p>
+<div class="marquee-item">
+IDEAS <span>✦</span>
+</div>
 
-        <div class="poem-author">
-          — Asher The Poet
-        </div>
+<div class="marquee-item">
+PURPOSE <span>✦</span>
+</div>
 
-      </div>
+<div class="marquee-item">
+CREATIVITY <span>✦</span>
+</div>
 
-    </div>
+<div class="marquee-item">
+INSPIRATION <span>✦</span>
+</div>
 
-  </section>
+</div>
 
+</div>
 
-  <!-- PURPOSE / VALUES -->
 
-  <section class="values" id="values">
+<!-- STATS -->
 
-    <div class="container">
+<section class="stats">
 
-      <div class="section-label">
-        What I Believe
-      </div>
+<div class="container stats-grid">
 
-      <h2 class="section-title">
-        Words with <span>purpose.</span>
-      </h2>
 
-      <div class="values-grid">
+<div class="stat reveal">
 
-        <div class="value">
-          <div class="value-number">01</div>
+<strong>01</strong>
 
-          <h3>Think</h3>
+<span>Author</span>
 
-          <p>
-            Question what you know. Explore new ideas. A powerful mind
-            begins with the courage to think differently.
-          </p>
-        </div>
+</div>
 
 
-        <div class="value">
-          <div class="value-number">02</div>
+<div class="stat reveal">
 
-          <h3>Create</h3>
+<strong>∞</strong>
 
-          <p>
-            Turn imagination into something real. Creativity gives ideas
-            a language and gives dreams a form.
-          </p>
-        </div>
+<span>Ideas</span>
 
+</div>
 
-        <div class="value">
-          <div class="value-number">03</div>
 
-          <h3>Inspire</h3>
+<div class="stat reveal">
 
-          <p>
-            Use your journey to encourage somebody else. Your story may
-            become the reason another person refuses to give up.
-          </p>
-        </div>
+<strong>24/7</strong>
 
-      </div>
+<span>Creating</span>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="stat reveal">
 
-  <!-- CONTACT -->
+<strong>1</strong>
 
-  <section class="contact" id="contact">
+<span>Purpose</span>
 
-    <div class="container">
+</div>
 
-      <div class="contact-box">
 
-        <div class="section-label">
-          Let's Connect
-        </div>
+</div>
 
-        <h2>
-          Let's turn an idea<br>
-          into <span>something real.</span>
-        </h2>
+</section>
 
-        <p>
-          For book enquiries, collaborations, creative projects,
-          speaking opportunities or simply to connect, reach out directly.
-        </p>
 
-        <div class="contact-buttons">
+<!-- ABOUT -->
 
-          <a
-            href="https://wa.me/265987569509"
-            class="btn btn-gold"
-            target="_blank"
-          >
-            WhatsApp Me
-          </a>
+<section class="about" id="about">
 
-          <a
-            href="mailto:mphamphajacob@gmail.com"
-            class="btn btn-outline"
-          >
-            Email Me
-          </a>
+<div class="container about-grid">
 
-        </div>
 
-      </div>
+<div class="reveal">
 
-    </div>
+<div class="kicker">
+The Story
+</div>
 
-  </section>
+<h2 class="title">
 
+Meet the mind<br>
 
-  <!-- FOOTER -->
+behind <span>the words.</span>
 
-  <footer>
+</h2>
 
-    <div class="footer-logo">
-      Asher The Poet
-    </div>
+</div>
 
-    <div class="socials">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#books">Books</a>
-      <a href="#poetry">Poetry</a>
-      <a href="#contact">Contact</a>
-    </div>
 
-    <p>
-      © 2026 Jacob Stephen Mphampha — Asher The Poet.
-      All rights reserved.
-    </p>
+<div class="about-copy reveal">
 
-    <p>
-      Written with purpose. Created with vision.
-    </p>
+<p>
 
-  </footer>
+<strong>Jacob Stephen Mphampha</strong>, creatively known as
+<strong>Asher The Poet</strong>, is a writer driven by curiosity,
+imagination and a desire to communicate ideas that matter.
 
+</p>
 
-  <!-- FLOATING WHATSAPP -->
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/265987569509"
-    target="_blank"
-    aria-label="Chat with Asher The Poet on WhatsApp"
-    title="WhatsApp Me"
-  >
-    ☎
-  </a>
+<p>
 
+For me, writing is not simply about filling pages. A powerful
+sentence can challenge a belief. A poem can give language to an
+emotion. A book can introduce someone to an entirely different
+way of seeing life.
 
-  <!-- JAVASCRIPT -->
+</p>
 
-  <script>
 
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
+<p>
 
-    function closeMenu() {
-      document.getElementById("navLinks").classList.remove("active");
-    }
+My work explores <strong>love, life, purpose, ambition, faith,
+personal growth and the psychology of people.</strong>
 
-  </script>
+</p>
+
+
+<p>
+
+I am still on the journey — learning, creating and developing a
+body of work that I hope will continue to speak to people long
+after the words have been written.
+
+</p>
+
+
+<div class="quote">
+
+"I don't write simply because I have words.
+I write because I have something worth saying."
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKS -->
+
+<section class="books" id="books">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+<div>
+
+<div class="kicker">
+Selected Works
+</div>
+
+<h2 class="title">
+
+Books that<br>
+
+start <span>conversations.</span>
+
+</h2>
+
+</div>
+
+
+<p class="section-head-text">
+
+Each book represents an idea, a question or a journey.
+Explore the works of Asher The Poet.
+
+</p>
+
+</div>
+
+
+<div class="books-grid">
+
+
+<!-- BOOK 1 -->
+
+<article class="book-card reveal">
+
+<div class="book-cover">
+
+<img
+src="broken-silencepng.png"
+alt="The Broken Silence"
+>
+
+</div>
+
+
+<div class="book-body">
+
+<div class="book-number">
+Featured Work 01
+</div>
+
+<h3>
+The Broken Silence
+</h3>
+
+<p>
+
+A work exploring thoughts, emotions, experiences and truths
+that often remain hidden behind silence.
+
+</p>
+
+
+<a
+href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20would%20like%20to%20know%20more%20about%20The%20Broken%20Silence."
+target="_blank"
+class="btn btn-gold">
+
+Enquire About Book
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- BOOK 2 -->
+
+<article class="book-card reveal">
+
+<div class="book-cover">
+
+<img
+src="rise-above-averagepng.png"
+alt="Rise Above Average"
+>
+
+</div>
+
+
+<div class="book-body">
+
+<div class="book-number">
+Featured Work 02
+</div>
+
+<h3>
+Rise Above Average
+</h3>
+
+<p>
+
+A motivational work about growth, discipline, ambition and
+refusing to settle for an ordinary life.
+
+</p>
+
+
+<a
+href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20would%20like%20to%20know%20more%20about%20Rise%20Above%20Average."
+target="_blank"
+class="btn btn-gold">
+
+Enquire About Book
+
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- BILLIONS -->
+
+<div class="mind-card reveal">
+
+
+<div class="mind-content">
+
+<div class="book-number">
+Coming Into Focus
+</div>
+
+<h3>
+
+Billions Begin<br>
+
+<span>in the Mind.</span>
+
+</h3>
+
+<p>
+
+A powerful exploration of mindset, ambition, discipline,
+ideas and the mental foundations behind pursuing greatness.
+
+</p>
+
+<br>
+
+<a
+href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20would%20like%20to%20know%20more%20about%20Billions%20Begin%20in%20the%20Mind."
+target="_blank"
+class="btn btn-outline">
+
+Ask About The Book
+
+</a>
+
+</div>
+
+
+<div class="mind-art">
+
+<h4>
+
+MIND<br>
+
+→<br>
+
+POSSIBILITY
+
+</h4>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- PHILOSOPHY -->
+
+<section class="philosophy" id="philosophy">
+
+<div class="container">
+
+
+<div class="center reveal">
+
+<div class="kicker">
+The Philosophy
+</div>
+
+<h2 class="title">
+
+Think. Create.<br>
+
+<span>Inspire.</span>
+
+</h2>
+
+<p>
+
+Three principles that guide the work and creative journey of
+Asher The Poet.
+
+</p>
+
+</div>
+
+
+<div class="philosophy-grid">
+
+
+<div class="philosophy-card reveal">
+
+<div class="number">
+01 — THINK
+</div>
+
+<h3>
+Challenge Ideas
+</h3>
+
+<p>
+
+Growth begins when we become willing to question what we know,
+learn something new and look beyond the obvious.
+
+</p>
+
+</div>
+
+
+<div class="philosophy-card reveal">
+
+<div class="number">
+02 — CREATE
+</div>
+
+<h3>
+Give Ideas Form
+</h3>
+
+<p>
+
+An idea becomes powerful when imagination is transformed into
+something that another person can experience.
+
+</p>
+
+</div>
+
+
+<div class="philosophy-card reveal">
+
+<div class="number">
+03 — INSPIRE
+</div>
+
+<h3>
+Leave Something Behind
+</h3>
+
+<p>
+
+The value of our work is measured not only by what we accomplish,
+but by what we inspire other people to become.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POETRY -->
+
+<section class="poetry" id="poetry">
+
+<div class="container poetry-content reveal">
+
+<div class="kicker">
+From The Poet
+</div>
+
+<div class="poetry-line"></div>
+
+
+<div class="poem">
+
+"Do not measure your future by the size of your beginning.
+Some of the greatest stories start as thoughts that nobody
+else can see."
+
+</div>
+
+
+<div class="author">
+— Asher The Poet
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+
+<div class="contact-box reveal">
+
+<div class="kicker">
+Let's Connect
+</div>
+
+
+<h2>
+
+Have an idea?<br>
+
+<span>Let's talk.</span>
+
+</h2>
+
+
+<p>
+
+For book enquiries, collaborations, creative projects,
+speaking opportunities or simply to connect, reach out directly.
+
+</p>
+
+
+<div class="buttons" style="justify-content:center">
+
+
+<a
+href="https://wa.me/265987569509"
+target="_blank"
+class="btn btn-gold">
+
+WhatsApp Me
+
+</a>
+
+
+<a
+href="mailto:mphamphajacob@gmail.com"
+class="btn btn-outline">
+
+Send Email
+
+</a>
+
+
+</div>
+
+
+<div class="contact-info">
+
+<div>
+
+<strong>WhatsApp</strong><br>
+
++265 987 569 509
+
+</div>
+
+
+<div>
+
+<strong>Email</strong><br>
+
+mphamphajacob@gmail.com
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-logo">
+Asher The Poet
+</div>
+
+<div class="footer-tag">
+Words • Ideas • Purpose
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#about">My Story</a>
+
+<a href="#books">Books</a>
+
+<a href="#philosophy">Philosophy</a>
+
+<a href="#poetry">Poetry</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Jacob Stephen Mphampha — Asher The Poet.
+All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/265987569509"
+target="_blank"
+class="whatsapp"
+title="Chat with Asher The Poet on WhatsApp"
+aria-label="WhatsApp">
+
+☎
+
+</a>
+
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document
+.getElementById("loader")
+.classList
+.add("hide");
+
+},700);
+
+});
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
+
+}
+
+
+/* NAVBAR */
+
+window.addEventListener("scroll",function(){
+
+const navbar=
+document.getElementById("navbar");
+
+if(window.scrollY>60){
+
+navbar.classList.add("scrolled");
+
+}else{
+
+navbar.classList.remove("scrolled");
+
+}
+
+});
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document
+.getElementById("navLinks")
+.classList
+.remove("active");
+
+});
+
+});
+
+
+/* REVEAL */
+
+const observer=
+new IntersectionObserver(
+
+function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+observer.observe(element);
+
+});
+
+
+</script>
 
 </body>
 </html>
