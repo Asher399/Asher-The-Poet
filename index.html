@@ -79,7 +79,8 @@ img{
     color:var(--gold);
 }
 
-/* LOADER */
+
+/* ================= LOADER ================= */
 
 .loader{
     position:fixed;
@@ -118,8 +119,14 @@ img{
 }
 
 @keyframes pulse{
-    from{opacity:.45;transform:scale(.98)}
-    to{opacity:1;transform:scale(1)}
+    from{
+        opacity:.45;
+        transform:scale(.98)
+    }
+    to{
+        opacity:1;
+        transform:scale(1)
+    }
 }
 
 @keyframes loaderOut{
@@ -130,7 +137,8 @@ img{
     }
 }
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
 
 .navbar{
     position:fixed;
@@ -215,7 +223,8 @@ img{
     cursor:pointer;
 }
 
-/* HERO */
+
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
@@ -343,6 +352,8 @@ img{
     color:var(--gold);
     font-family:"Cormorant Garamond",serif;
     font-size:23px;
+    letter-spacing:.5px;
+    white-space:nowrap;
 }
 
 .hero-badge small{
@@ -351,7 +362,8 @@ img{
     letter-spacing:2px;
 }
 
-/* MARQUEE */
+
+/* ================= MARQUEE ================= */
 
 .marquee{
     border-top:1px solid var(--line);
@@ -378,10 +390,13 @@ img{
 }
 
 @keyframes marquee{
-    to{transform:translateX(-50%)}
+    to{
+        transform:translateX(-50%)
+    }
 }
 
-/* GENERAL SECTIONS */
+
+/* ================= GENERAL SECTIONS ================= */
 
 section{
     padding:110px 0;
@@ -417,7 +432,8 @@ section{
     font-size:13px;
 }
 
-/* ABOUT */
+
+/* ================= ABOUT ================= */
 
 .about-grid{
     display:grid;
@@ -450,7 +466,8 @@ section{
     margin-top:30px;
 }
 
-/* BOOKS */
+
+/* ================= BOOKS ================= */
 
 .books{
     background:
@@ -506,7 +523,18 @@ section{
 .book-title{
     font-family:"Cormorant Garamond",serif;
     font-size:34px;
-    margin:8px 0;
+    margin:8px 0 4px;
+}
+
+.book-price{
+    display:inline-block;
+    color:#080808;
+    background:var(--gold);
+    padding:7px 14px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    margin:8px 0 15px;
 }
 
 .book-info p{
@@ -515,7 +543,24 @@ section{
     line-height:1.7;
 }
 
-/* FEATURED */
+
+/* BUY BUTTON */
+
+.buy-book{
+    width:100%;
+    margin-top:22px;
+    background:transparent;
+    color:var(--gold);
+    border:1px solid var(--gold);
+}
+
+.buy-book:hover{
+    background:var(--gold);
+    color:#080808;
+}
+
+
+/* ================= FEATURED ================= */
 
 .featured{
     position:relative;
@@ -571,7 +616,8 @@ section{
     transform:rotate(-90deg);
 }
 
-/* PHILOSOPHY */
+
+/* ================= PHILOSOPHY ================= */
 
 .philosophy-grid{
     display:grid;
@@ -609,7 +655,8 @@ section{
     line-height:1.7;
 }
 
-/* QUOTE */
+
+/* ================= QUOTE ================= */
 
 .quote-section{
     text-align:center;
@@ -640,7 +687,8 @@ section{
     font-size:9px;
 }
 
-/* CONTACT */
+
+/* ================= CONTACT ================= */
 
 .contact-box{
     border:1px solid var(--line);
@@ -682,7 +730,8 @@ section{
     fill:currentColor;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
     border-top:1px solid rgba(255,255,255,.08);
@@ -708,7 +757,8 @@ footer{
     letter-spacing:1px;
 }
 
-/* FLOATING WHATSAPP */
+
+/* ================= FLOATING WHATSAPP ================= */
 
 .whatsapp-float{
     position:fixed;
@@ -735,7 +785,8 @@ footer{
     fill:white;
 }
 
-/* REVEAL */
+
+/* ================= REVEAL ================= */
 
 .reveal{
     opacity:0;
@@ -748,7 +799,8 @@ footer{
     transform:none;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
@@ -844,6 +896,7 @@ footer{
     }
 }
 
+
 @media(max-width:500px){
 
     .logo-text strong{
@@ -871,6 +924,15 @@ footer{
     .hero-badge{
         left:10px;
         bottom:10px;
+        padding:13px 15px;
+    }
+
+    .hero-badge strong{
+        font-size:19px;
+    }
+
+    .hero-badge small{
+        font-size:8px;
     }
 
     .book-cover{
@@ -892,56 +954,96 @@ footer{
     .featured-art:before{
         font-size:90px;
     }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
+
 <!-- LOADER -->
+
 <div class="loader">
+
     <div class="loader-content">
-        <div class="loader-logo">ASHER</div>
+
+        <div class="loader-logo">
+            ASHER
+        </div>
+
         <div class="loader-line"></div>
-        <div class="loader-small">THE POET</div>
+
+        <div class="loader-small">
+            THE POET
+        </div>
+
     </div>
+
 </div>
 
+
+
 <!-- NAVIGATION -->
+
 <header class="navbar">
+
     <div class="container nav-inner">
 
         <a href="#home" class="logo">
+
             <div class="logo-mark">
                 <span>A</span>
             </div>
 
             <div class="logo-text">
+
                 <strong>ASHER THE POET</strong>
+
                 <small>OFFICIAL WEBSITE</small>
+
             </div>
+
         </a>
 
+
         <nav class="nav-links" id="navLinks">
+
             <a href="#home">Home</a>
+
             <a href="#about">About</a>
+
             <a href="#books">Books</a>
+
             <a href="#philosophy">Philosophy</a>
-            <a href="#contact" class="nav-contact">Contact</a>
+
+            <a href="#contact" class="nav-contact">
+                Contact
+            </a>
+
         </nav>
 
-        <div class="menu" onclick="toggleMenu()">☰</div>
+
+        <div class="menu" onclick="toggleMenu()">
+            ☰
+        </div>
 
     </div>
+
 </header>
 
 
+
 <!-- HERO -->
+
 <main id="home">
 
 <section class="hero">
+
     <div class="container hero-grid">
+
 
         <div class="hero-content reveal">
 
@@ -949,16 +1051,26 @@ footer{
                 Poet • Author • Storyteller • Servant of God
             </div>
 
+
             <h1>
+
                 ASHER
-                <span>THE POET</span>
+
+                <span>
+                    THE POET
+                </span>
+
             </h1>
 
+
             <p class="hero-sub">
+
                 Welcome to the official world of Jacob Stephen Mphampha —
                 a creative voice exploring love, life, wisdom, purpose,
                 human nature and the power of the mind.
+
             </p>
+
 
             <div class="hero-buttons">
 
@@ -975,6 +1087,7 @@ footer{
         </div>
 
 
+
         <div class="hero-image-wrap reveal">
 
             <img
@@ -983,20 +1096,33 @@ footer{
                 class="hero-image"
             >
 
+
             <div class="hero-badge">
-                <strong>Jacob Stephen Mphampha</strong>
-                <small>AS<strong class="gold">HER</strong> THE POET</small>
+
+                <strong>
+                    ASHER THE POET
+                </strong>
+
+                <small>
+                    JACOB STEPHEN MPHAMPHA
+                </small>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
+
 <!-- MARQUEE -->
+
 <div class="marquee">
+
     <div class="marquee-track">
+
         <span>THINK <b>✦</b></span>
         <span>CREATE <b>✦</b></span>
         <span>INSPIRE <b>✦</b></span>
@@ -1007,63 +1133,110 @@ footer{
         <span>CREATE <b>✦</b></span>
         <span>INSPIRE <b>✦</b></span>
         <span>LOVE <b>✦</b></span>
+
     </div>
+
 </div>
 
 
+
 <!-- ABOUT -->
+
 <section id="about">
 
     <div class="container">
 
+
         <div class="section-top reveal">
 
             <div>
-                <div class="eyebrow">01 — The Author</div>
+
+                <div class="eyebrow">
+                    01 — The Author
+                </div>
 
                 <h2 class="section-title">
+
                     Words with<br>
-                    <span class="gold">meaning.</span>
+
+                    <span class="gold">
+                        meaning.
+                    </span>
+
                 </h2>
+
             </div>
 
+
             <p class="section-description">
+
                 Poetry is more than words. It is emotion,
                 thought, experience and truth transformed
                 into something that can live beyond the moment.
+
             </p>
 
         </div>
 
 
+
         <div class="about-grid">
 
+
             <div class="reveal">
-                <div class="about-number">01</div>
+
+                <div class="about-number">
+                    01
+                </div>
+
             </div>
+
 
             <div class="about-copy reveal">
 
                 <p>
-                    <strong class="gold">Jacob Stephen Mphampha</strong>,
-                    professionally known as <strong>Asher The Poet</strong>,
-                    is a poet, author and storyteller whose work is inspired
-                    by the realities of life, relationships, human behaviour,
-                    personal growth and faith.
-                </p>
 
-                <p>
-                    Through poetry and books, Asher seeks to transform
-                    thoughts into words and words into ideas that challenge,
-                    encourage and inspire people to see life differently.
-                </p>
-
-                <p>
-                    His creative journey is built around one simple belief:
                     <strong class="gold">
-                        the right words can change the way a person thinks.
-                    </strong>
+                        Jacob Stephen Mphampha
+                    </strong>,
+
+                    professionally known as
+                    <strong>
+                        Asher The Poet
+                    </strong>,
+
+                    is a poet, author and storyteller whose work
+                    is inspired by the realities of life,
+                    relationships, human behaviour,
+                    personal growth and faith.
+
                 </p>
+
+
+                <p>
+
+                    Through poetry and books, Asher seeks to
+                    transform thoughts into words and words
+                    into ideas that challenge, encourage and
+                    inspire people to see life differently.
+
+                </p>
+
+
+                <p>
+
+                    His creative journey is built around
+                    one simple belief:
+
+                    <strong class="gold">
+
+                        the right words can change
+                        the way a person thinks.
+
+                    </strong>
+
+                </p>
+
 
                 <div class="signature">
                     — Asher The Poet
@@ -1078,34 +1251,52 @@ footer{
 </section>
 
 
+
 <!-- BOOKS -->
+
 <section id="books" class="books">
 
     <div class="container">
 
+
         <div class="section-top reveal">
 
             <div>
-                <div class="eyebrow">02 — Publications</div>
+
+                <div class="eyebrow">
+                    02 — Publications
+                </div>
 
                 <h2 class="section-title">
+
                     Stories that<br>
-                    <span class="gold">speak.</span>
+
+                    <span class="gold">
+                        speak.
+                    </span>
+
                 </h2>
+
             </div>
 
+
             <p class="section-description">
+
                 Books created to provoke thought, awaken emotion
                 and encourage readers to become better versions
                 of themselves.
+
             </p>
 
         </div>
 
 
+
         <div class="books-grid">
 
-            <!-- BOOK ONE -->
+
+            <!-- THE BROKEN SILENCE -->
+
             <article class="book-card reveal">
 
                 <div class="book-cover">
@@ -1117,28 +1308,54 @@ footer{
 
                 </div>
 
+
                 <div class="book-info">
 
                     <div class="book-number">
                         PUBLICATION 01
                     </div>
 
+
                     <h3 class="book-title">
                         The Broken Silence
                     </h3>
 
+
+                    <div class="book-price">
+                        $5.00
+                    </div>
+
+
                     <p>
+
                         A journey through emotions, hidden thoughts,
                         experiences and the courage to finally give
                         a voice to what has remained unspoken.
+
                     </p>
+
+
+                    <!-- BUY BUTTON -->
+
+                    <a
+                        href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet.%20I%20would%20like%20to%20buy%20The%20Broken%20Silence%20for%20%245.00."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn buy-book"
+                    >
+
+                        BUY BOOK — $5.00
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- BOOK TWO -->
+
+            <!-- RISE ABOVE AVERAGE -->
+
             <article class="book-card reveal">
 
                 <div class="book-cover">
@@ -1150,25 +1367,51 @@ footer{
 
                 </div>
 
+
                 <div class="book-info">
 
                     <div class="book-number">
                         PUBLICATION 02
                     </div>
 
+
                     <h3 class="book-title">
                         Rise Above Average
                     </h3>
 
+
+                    <div class="book-price">
+                        $5.00
+                    </div>
+
+
                     <p>
+
                         A message about growth, discipline,
-                        courage and developing the mindset required
-                        to rise beyond ordinary expectations.
+                        courage and developing the mindset
+                        required to rise beyond ordinary
+                        expectations.
+
                     </p>
+
+
+                    <!-- BUY BUTTON -->
+
+                    <a
+                        href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet.%20I%20would%20like%20to%20buy%20Rise%20Above%20Average%20for%20%245.00."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn buy-book"
+                    >
+
+                        BUY BOOK — $5.00
+
+                    </a>
 
                 </div>
 
             </article>
+
 
         </div>
 
@@ -1177,12 +1420,15 @@ footer{
 </section>
 
 
+
 <!-- FEATURED PROJECT -->
+
 <section class="featured">
 
     <div class="container">
 
         <div class="featured-box reveal">
+
 
             <div class="featured-content">
 
@@ -1190,17 +1436,27 @@ footer{
                     Featured Project
                 </div>
 
+
                 <h3>
+
                     Billions Begin<br>
-                    <span>In The Mind.</span>
+
+                    <span>
+                        In The Mind.
+                    </span>
+
                 </h3>
 
+
                 <p>
+
                     Before wealth becomes visible, an idea exists
                     in the mind. This upcoming work explores mindset,
                     ambition, discipline, vision and the thinking
                     that can shape a person's future.
+
                 </p>
+
 
                 <a href="#contact" class="btn btn-outline">
                     Stay Connected
@@ -1208,7 +1464,9 @@ footer{
 
             </div>
 
+
             <div class="featured-art"></div>
+
 
         </div>
 
@@ -1217,76 +1475,116 @@ footer{
 </section>
 
 
+
 <!-- PHILOSOPHY -->
+
 <section id="philosophy">
 
     <div class="container">
 
+
         <div class="section-top reveal">
 
             <div>
-                <div class="eyebrow">03 — Philosophy</div>
+
+                <div class="eyebrow">
+                    03 — Philosophy
+                </div>
+
 
                 <h2 class="section-title">
+
                     Think.<br>
+
                     Create.<br>
-                    <span class="gold">Inspire.</span>
+
+                    <span class="gold">
+                        Inspire.
+                    </span>
+
                 </h2>
+
             </div>
 
+
             <p class="section-description">
+
                 Three principles behind the creative identity
                 of Asher The Poet.
+
             </p>
 
         </div>
 
 
+
         <div class="philosophy-grid">
+
 
             <div class="philosophy-card reveal">
 
-                <div class="philosophy-icon">01</div>
+                <div class="philosophy-icon">
+                    01
+                </div>
 
-                <h3>Think</h3>
+                <h3>
+                    Think
+                </h3>
 
                 <p>
+
                     Question ideas. Explore possibilities.
                     Develop a mind capable of seeing beyond
                     what is immediately visible.
+
                 </p>
 
             </div>
 
 
+
             <div class="philosophy-card reveal">
 
-                <div class="philosophy-icon">02</div>
+                <div class="philosophy-icon">
+                    02
+                </div>
 
-                <h3>Create</h3>
+                <h3>
+                    Create
+                </h3>
 
                 <p>
+
                     Turn thoughts, emotions and experiences
                     into meaningful art, stories and ideas
                     that can reach other people.
+
                 </p>
 
             </div>
+
 
 
             <div class="philosophy-card reveal">
 
-                <div class="philosophy-icon">03</div>
+                <div class="philosophy-icon">
+                    03
+                </div>
 
-                <h3>Inspire</h3>
+                <h3>
+                    Inspire
+                </h3>
 
                 <p>
+
                     Leave people better than you found them.
                     Every word should carry the possibility
                     of awakening something positive.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1295,17 +1593,25 @@ footer{
 </section>
 
 
+
 <!-- QUOTE -->
+
 <section class="quote-section">
 
     <div class="container reveal">
 
-        <div class="quote-mark">“</div>
+        <div class="quote-mark">
+            “
+        </div>
+
 
         <div class="quote">
+
             Words become powerful when they give
             someone the courage to think differently.
+
         </div>
+
 
         <div class="quote-author">
             Asher The Poet
@@ -1316,10 +1622,13 @@ footer{
 </section>
 
 
+
 <!-- CONTACT -->
+
 <section id="contact">
 
     <div class="container">
+
 
         <div class="contact-box reveal">
 
@@ -1327,20 +1636,32 @@ footer{
                 04 — Connect
             </div>
 
+
             <h2>
+
                 Let the conversation<br>
-                <span class="gold">begin.</span>
+
+                <span class="gold">
+                    begin.
+                </span>
+
             </h2>
 
+
             <p>
+
                 For collaborations, literary conversations,
                 creative opportunities and other enquiries,
                 connect with Asher The Poet directly.
+
             </p>
+
 
             <div class="contact-buttons">
 
-                <!-- WhatsApp -->
+
+                <!-- WHATSAPP -->
+
                 <a
                     href="https://wa.me/265987569509"
                     target="_blank"
@@ -1349,8 +1670,10 @@ footer{
                     aria-label="Contact Asher The Poet on WhatsApp"
                 >
 
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+
                         <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.45-8.43ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.84 9.84 0 0 1-1.51-5.27C2.2 6.47 6.63 2.04 12.06 2.04c2.63 0 5.1 1.03 6.96 2.89a9.83 9.83 0 0 1 2.88 6.99c0 5.44-4.43 9.88-9.83 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+
                     </svg>
 
                     WhatsApp
@@ -1358,20 +1681,25 @@ footer{
                 </a>
 
 
-                <!-- Email -->
+
+                <!-- EMAIL -->
+
                 <a
                     href="mailto:mphamphajacob@gmail.com"
                     class="btn btn-outline contact-btn"
                     aria-label="Send an email to Asher The Poet"
                 >
 
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+
                         <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+
                     </svg>
 
                     Email
 
                 </a>
+
 
             </div>
 
@@ -1381,10 +1709,13 @@ footer{
 
 </section>
 
+
 </main>
 
 
+
 <!-- FOOTER -->
+
 <footer>
 
     <div class="container footer-inner">
@@ -1393,8 +1724,11 @@ footer{
             Asher The Poet
         </div>
 
+
         <div class="footer-copy">
+
             © 2026 Jacob Stephen Mphampha · Official Website
+
         </div>
 
     </div>
@@ -1402,7 +1736,9 @@ footer{
 </footer>
 
 
+
 <!-- FLOATING WHATSAPP -->
+
 <a
     href="https://wa.me/265987569509"
     target="_blank"
@@ -1412,10 +1748,13 @@ footer{
 >
 
     <svg viewBox="0 0 24 24">
+
         <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.59 5.96L.06 24l6.27-1.64a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.45-8.43ZM12.07 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.84 9.84 0 0 1-1.51-5.27C2.2 6.47 6.63 2.04 12.06 2.04c2.63 0 5.1 1.03 6.96 2.89a9.83 9.83 0 0 1 2.88 6.99c0 5.44-4.43 9.88-9.83 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+
     </svg>
 
 </a>
+
 
 
 <script>
@@ -1423,51 +1762,80 @@ footer{
 /* MOBILE MENU */
 
 function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("show");
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("show");
+
 }
 
 
-/* CLOSE MOBILE MENU WHEN LINK IS CLICKED */
+/* CLOSE MOBILE MENU */
 
-document.querySelectorAll(".nav-links a").forEach(function(link){
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link){
 
-    link.addEventListener("click",function(){
-        document.getElementById("navLinks").classList.remove("show");
+        link.addEventListener("click",function(){
+
+            document
+                .getElementById("navLinks")
+                .classList
+                .remove("show");
+
+        });
+
     });
 
-});
 
 
 /* SCROLL REVEAL */
 
 const reveals = document.querySelectorAll(".reveal");
 
+
 function revealOnScroll(){
 
     reveals.forEach(function(element){
 
         const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
+
+        const elementTop =
+            element.getBoundingClientRect().top;
+
 
         if(elementTop < windowHeight - 80){
+
             element.classList.add("active");
+
         }
 
     });
 
 }
 
-window.addEventListener("scroll",revealOnScroll);
 
-window.addEventListener("load",function(){
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
 
-    setTimeout(function(){
-        revealOnScroll();
-    },500);
 
-});
+window.addEventListener(
+    "load",
+    function(){
+
+        setTimeout(
+            revealOnScroll,
+            500
+        );
+
+    }
+);
 
 </script>
+
 
 </body>
 </html>
