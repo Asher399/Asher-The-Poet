@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Asher The Poet | Official Website</title>
 
-<meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha. Poet, author, storyteller and servant of God.">
+<meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha. Poet, author, storyteller, traveller and servant of God.">
 <meta name="author" content="Jacob Stephen Mphampha">
 <meta name="theme-color" content="#080808">
 
 <meta property="og:title" content="Asher The Poet | Official Website">
-<meta property="og:description" content="Poet • Author • Storyteller • Servant of God">
+<meta property="og:description" content="Poet • Author • Storyteller • Traveller • Servant of God">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,8 +80,7 @@ img{
     color:var(--gold);
 }
 
-
-/* ================= LOADER ================= */
+/* LOADER */
 
 .loader{
     position:fixed;
@@ -121,11 +121,11 @@ img{
 @keyframes pulse{
     from{
         opacity:.45;
-        transform:scale(.98)
+        transform:scale(.98);
     }
     to{
         opacity:1;
-        transform:scale(1)
+        transform:scale(1);
     }
 }
 
@@ -137,8 +137,7 @@ img{
     }
 }
 
-
-/* ================= NAVBAR ================= */
+/* NAVIGATION */
 
 .navbar{
     position:fixed;
@@ -194,12 +193,12 @@ img{
 
 .nav-links{
     display:flex;
-    gap:30px;
+    gap:26px;
     align-items:center;
 }
 
 .nav-links a{
-    font-size:11px;
+    font-size:10px;
     letter-spacing:1.5px;
     text-transform:uppercase;
     color:#bbb;
@@ -223,8 +222,7 @@ img{
     cursor:pointer;
 }
 
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     min-height:100vh;
@@ -362,8 +360,7 @@ img{
     letter-spacing:2px;
 }
 
-
-/* ================= MARQUEE ================= */
+/* MARQUEE */
 
 .marquee{
     border-top:1px solid var(--line);
@@ -391,12 +388,11 @@ img{
 
 @keyframes marquee{
     to{
-        transform:translateX(-50%)
+        transform:translateX(-50%);
     }
 }
 
-
-/* ================= GENERAL SECTIONS ================= */
+/* GENERAL SECTIONS */
 
 section{
     padding:110px 0;
@@ -432,8 +428,7 @@ section{
     font-size:13px;
 }
 
-
-/* ================= ABOUT ================= */
+/* ABOUT */
 
 .about-grid{
     display:grid;
@@ -466,12 +461,14 @@ section{
     margin-top:30px;
 }
 
-
-/* ================= BOOKS ================= */
+/* BOOKS */
 
 .books{
     background:
-        linear-gradient(rgba(255,255,255,.018),rgba(255,255,255,.018));
+        linear-gradient(
+            rgba(255,255,255,.018),
+            rgba(255,255,255,.018)
+        );
 }
 
 .books-grid{
@@ -543,9 +540,6 @@ section{
     line-height:1.7;
 }
 
-
-/* BUY BUTTON */
-
 .buy-book{
     width:100%;
     margin-top:22px;
@@ -559,8 +553,150 @@ section{
     color:#080808;
 }
 
+/* =========================================================
+   TRAVEL JOURNAL
+   ========================================================= */
 
-/* ================= FEATURED ================= */
+.travel-section{
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(212,175,55,.07),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(212,175,55,.05),
+            transparent 35%
+        ),
+
+        #070707;
+
+    overflow:hidden;
+}
+
+.travel-heading{
+    max-width:680px;
+}
+
+.travel-heading p{
+    color:#858585;
+    font-size:14px;
+    line-height:1.9;
+    margin-top:22px;
+}
+
+.travel-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.travel-card{
+    position:relative;
+    background:#090909;
+    border:1px solid rgba(255,255,255,.08);
+    overflow:hidden;
+    transition:.5s ease;
+}
+
+.travel-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(212,175,55,.55);
+    box-shadow:0 25px 70px rgba(0,0,0,.55);
+}
+
+.travel-video-wrap{
+    position:relative;
+    background:#000;
+    aspect-ratio:16/10;
+    overflow:hidden;
+}
+
+.travel-video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    background:#000;
+}
+
+.travel-number{
+    position:absolute;
+    top:18px;
+    left:18px;
+    z-index:3;
+    padding:8px 12px;
+    background:rgba(5,5,5,.82);
+    border:1px solid rgba(212,175,55,.45);
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:3px;
+    backdrop-filter:blur(8px);
+    pointer-events:none;
+}
+
+.travel-info{
+    padding:25px 25px 28px;
+}
+
+.travel-location{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:9px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.travel-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.travel-description{
+    color:#808080;
+    font-size:13px;
+    line-height:1.75;
+}
+
+.travel-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+    padding-top:17px;
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.travel-meta span{
+    color:#666;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.travel-meta strong{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:1.5px;
+}
+
+.travel-note{
+    text-align:center;
+    margin-top:50px;
+    color:#666;
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;
+    font-style:italic;
+}
+
+/* FEATURED */
 
 .featured{
     position:relative;
@@ -573,7 +709,11 @@ section{
     grid-template-columns:1fr 1fr;
     overflow:hidden;
     background:
-        radial-gradient(circle at 70% 50%,rgba(212,175,55,.1),transparent 40%),
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(212,175,55,.1),
+            transparent 40%
+        ),
         #090909;
 }
 
@@ -616,8 +756,7 @@ section{
     transform:rotate(-90deg);
 }
 
-
-/* ================= PHILOSOPHY ================= */
+/* PHILOSOPHY */
 
 .philosophy-grid{
     display:grid;
@@ -655,14 +794,17 @@ section{
     line-height:1.7;
 }
 
-
-/* ================= QUOTE ================= */
+/* QUOTE */
 
 .quote-section{
     text-align:center;
     padding:130px 0;
     background:
-        radial-gradient(circle,rgba(212,175,55,.09),transparent 45%);
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.09),
+            transparent 45%
+        );
 }
 
 .quote-mark{
@@ -687,15 +829,18 @@ section{
     font-size:9px;
 }
 
-
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-box{
     border:1px solid var(--line);
     padding:70px;
     text-align:center;
     background:
-        radial-gradient(circle at center,rgba(212,175,55,.08),transparent 45%),
+        radial-gradient(
+            circle at center,
+            rgba(212,175,55,.08),
+            transparent 45%
+        ),
         #090909;
 }
 
@@ -730,8 +875,7 @@ section{
     fill:currentColor;
 }
 
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     border-top:1px solid rgba(255,255,255,.08);
@@ -757,8 +901,7 @@ footer{
     letter-spacing:1px;
 }
 
-
-/* ================= FLOATING WHATSAPP ================= */
+/* WHATSAPP */
 
 .whatsapp-float{
     position:fixed;
@@ -785,8 +928,7 @@ footer{
     fill:white;
 }
 
-
-/* ================= REVEAL ================= */
+/* REVEAL */
 
 .reveal{
     opacity:0;
@@ -799,8 +941,7 @@ footer{
     transform:none;
 }
 
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
@@ -870,6 +1011,10 @@ footer{
         height:480px;
     }
 
+    .travel-grid{
+        grid-template-columns:1fr;
+    }
+
     .featured-box{
         grid-template-columns:1fr;
     }
@@ -896,6 +1041,7 @@ footer{
     }
 }
 
+/* SMALL MOBILE */
 
 @media(max-width:500px){
 
@@ -939,6 +1085,23 @@ footer{
         height:420px;
     }
 
+    .travel-video-wrap{
+        aspect-ratio:16/11;
+    }
+
+    .travel-info{
+        padding:22px 20px 24px;
+    }
+
+    .travel-title{
+        font-size:29px;
+    }
+
+    .travel-meta{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
     section{
         padding:85px 0;
     }
@@ -954,12 +1117,11 @@ footer{
     .featured-art:before{
         font-size:90px;
     }
-
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -983,7 +1145,6 @@ footer{
     </div>
 
 </div>
-
 
 
 <!-- NAVIGATION -->
@@ -1011,13 +1172,25 @@ footer{
 
         <nav class="nav-links" id="navLinks">
 
-            <a href="#home">Home</a>
+            <a href="#home">
+                Home
+            </a>
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#books">Books</a>
+            <a href="#books">
+                Books
+            </a>
 
-            <a href="#philosophy">Philosophy</a>
+            <a href="#travel">
+                Travel
+            </a>
+
+            <a href="#philosophy">
+                Philosophy
+            </a>
 
             <a href="#contact" class="nav-contact">
                 Contact
@@ -1035,7 +1208,6 @@ footer{
 </header>
 
 
-
 <!-- HERO -->
 
 <main id="home">
@@ -1048,7 +1220,7 @@ footer{
         <div class="hero-content reveal">
 
             <div class="hero-label">
-                Poet • Author • Storyteller • Servant of God
+                Poet • Author • Storyteller • Traveller • Servant of God
             </div>
 
 
@@ -1078,14 +1250,13 @@ footer{
                     Explore My Books
                 </a>
 
-                <a href="#about" class="btn btn-outline">
-                    Discover My Story
+                <a href="#travel" class="btn btn-outline">
+                    Explore My Journey
                 </a>
 
             </div>
 
         </div>
-
 
 
         <div class="hero-image-wrap reveal">
@@ -1116,7 +1287,6 @@ footer{
 </section>
 
 
-
 <!-- MARQUEE -->
 
 <div class="marquee">
@@ -1124,20 +1294,32 @@ footer{
     <div class="marquee-track">
 
         <span>THINK <b>✦</b></span>
+
         <span>CREATE <b>✦</b></span>
+
         <span>INSPIRE <b>✦</b></span>
+
+        <span>TRAVEL <b>✦</b></span>
+
         <span>LOVE <b>✦</b></span>
+
         <span>WISDOM <b>✦</b></span>
+
         <span>PURPOSE <b>✦</b></span>
+
         <span>THINK <b>✦</b></span>
+
         <span>CREATE <b>✦</b></span>
+
         <span>INSPIRE <b>✦</b></span>
+
+        <span>TRAVEL <b>✦</b></span>
+
         <span>LOVE <b>✦</b></span>
 
     </div>
 
 </div>
-
 
 
 <!-- ABOUT -->
@@ -1177,7 +1359,6 @@ footer{
             </p>
 
         </div>
-
 
 
         <div class="about-grid">
@@ -1251,7 +1432,6 @@ footer{
 </section>
 
 
-
 <!-- BOOKS -->
 
 <section id="books" class="books">
@@ -1291,11 +1471,10 @@ footer{
         </div>
 
 
-
         <div class="books-grid">
 
 
-            <!-- THE BROKEN SILENCE -->
+            <!-- BOOK 01 -->
 
             <article class="book-card reveal">
 
@@ -1335,8 +1514,6 @@ footer{
                     </p>
 
 
-                    <!-- BUY BUTTON -->
-
                     <a
                         href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet.%20I%20would%20like%20to%20buy%20The%20Broken%20Silence%20for%20%245.00."
                         target="_blank"
@@ -1353,8 +1530,7 @@ footer{
             </article>
 
 
-
-            <!-- RISE ABOVE AVERAGE -->
+            <!-- BOOK 02 -->
 
             <article class="book-card reveal">
 
@@ -1395,8 +1571,6 @@ footer{
                     </p>
 
 
-                    <!-- BUY BUTTON -->
-
                     <a
                         href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet.%20I%20would%20like%20to%20buy%20Rise%20Above%20Average%20for%20%245.00."
                         target="_blank"
@@ -1412,6 +1586,213 @@ footer{
 
             </article>
 
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRAVEL JOURNAL
+     ========================================================= -->
+
+<section id="travel" class="travel-section">
+
+    <div class="container">
+
+
+        <div class="section-top reveal">
+
+            <div class="travel-heading">
+
+                <div class="eyebrow">
+                    03 — Travel Journal
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Beyond the<br>
+
+                    <span class="gold">
+                        page.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Some stories are written with a pen.
+                    Others are experienced through the journey.
+
+                    Explore moments captured from the places,
+                    experiences and adventures along the way.
+
+                </p>
+
+            </div>
+
+
+            <p class="section-description">
+
+                A visual collection of memories from the journey
+                of Asher The Poet — because life itself is part
+                of the story.
+
+            </p>
+
+        </div>
+
+
+        <div class="travel-grid">
+
+
+            <!-- VIDEO 01 -->
+
+            <article class="travel-card reveal">
+
+                <div class="travel-video-wrap">
+
+                    <div class="travel-number">
+                        JOURNAL 01
+                    </div>
+
+
+                    <video
+                        class="travel-video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="video_20250701_102244.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support HTML5 video.
+
+                    </video>
+
+                </div>
+
+
+                <div class="travel-info">
+
+                    <div class="travel-location">
+                        THE JOURNEY
+                    </div>
+
+
+                    <h3 class="travel-title">
+                        Moments Along The Way
+                    </h3>
+
+
+                    <p class="travel-description">
+
+                        A glimpse into the journey beyond the pages —
+                        capturing a moment, a place and an experience
+                        worth remembering.
+
+                    </p>
+
+
+                    <div class="travel-meta">
+
+                        <span>
+                            Asher The Poet
+                        </span>
+
+                        <strong>
+                            Travel Journal 01
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEO 02 -->
+
+            <article class="travel-card reveal">
+
+                <div class="travel-video-wrap">
+
+                    <div class="travel-number">
+                        JOURNAL 02
+                    </div>
+
+
+                    <video
+                        class="travel-video"
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="video_20250701_115028.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support HTML5 video.
+
+                    </video>
+
+                </div>
+
+
+                <div class="travel-info">
+
+                    <div class="travel-location">
+                        PLACES & EXPERIENCES
+                    </div>
+
+
+                    <h3 class="travel-title">
+                        Another Chapter Of The Journey
+                    </h3>
+
+
+                    <p class="travel-description">
+
+                        Every destination leaves something behind —
+                        a memory, a lesson, a feeling or a story.
+
+                        This is another chapter of the journey.
+
+                    </p>
+
+
+                    <div class="travel-meta">
+
+                        <span>
+                            Asher The Poet
+                        </span>
+
+                        <strong>
+                            Travel Journal 02
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="travel-note reveal">
+
+            “Every journey becomes a story
+            when you take the time to remember it.”
 
         </div>
 
@@ -1420,12 +1801,12 @@ footer{
 </section>
 
 
-
 <!-- FEATURED PROJECT -->
 
 <section class="featured">
 
     <div class="container">
+
 
         <div class="featured-box reveal">
 
@@ -1467,13 +1848,11 @@ footer{
 
             <div class="featured-art"></div>
 
-
         </div>
 
     </div>
 
 </section>
-
 
 
 <!-- PHILOSOPHY -->
@@ -1488,7 +1867,7 @@ footer{
             <div>
 
                 <div class="eyebrow">
-                    03 — Philosophy
+                    04 — Philosophy
                 </div>
 
 
@@ -1517,7 +1896,6 @@ footer{
         </div>
 
 
-
         <div class="philosophy-grid">
 
 
@@ -1527,9 +1905,11 @@ footer{
                     01
                 </div>
 
+
                 <h3>
                     Think
                 </h3>
+
 
                 <p>
 
@@ -1542,16 +1922,17 @@ footer{
             </div>
 
 
-
             <div class="philosophy-card reveal">
 
                 <div class="philosophy-icon">
                     02
                 </div>
 
+
                 <h3>
                     Create
                 </h3>
+
 
                 <p>
 
@@ -1564,16 +1945,17 @@ footer{
             </div>
 
 
-
             <div class="philosophy-card reveal">
 
                 <div class="philosophy-icon">
                     03
                 </div>
 
+
                 <h3>
                     Inspire
                 </h3>
+
 
                 <p>
 
@@ -1585,7 +1967,6 @@ footer{
 
             </div>
 
-
         </div>
 
     </div>
@@ -1593,12 +1974,12 @@ footer{
 </section>
 
 
-
 <!-- QUOTE -->
 
 <section class="quote-section">
 
     <div class="container reveal">
+
 
         <div class="quote-mark">
             “
@@ -1622,7 +2003,6 @@ footer{
 </section>
 
 
-
 <!-- CONTACT -->
 
 <section id="contact">
@@ -1632,8 +2012,9 @@ footer{
 
         <div class="contact-box reveal">
 
+
             <div class="eyebrow">
-                04 — Connect
+                05 — Connect
             </div>
 
 
@@ -1681,7 +2062,6 @@ footer{
                 </a>
 
 
-
                 <!-- EMAIL -->
 
                 <a
@@ -1700,7 +2080,6 @@ footer{
 
                 </a>
 
-
             </div>
 
         </div>
@@ -1713,12 +2092,12 @@ footer{
 </main>
 
 
-
 <!-- FOOTER -->
 
 <footer>
 
     <div class="container footer-inner">
+
 
         <div class="footer-name">
             Asher The Poet
@@ -1734,7 +2113,6 @@ footer{
     </div>
 
 </footer>
-
 
 
 <!-- FLOATING WHATSAPP -->
@@ -1754,7 +2132,6 @@ footer{
     </svg>
 
 </a>
-
 
 
 <script>
@@ -1789,17 +2166,18 @@ document
     });
 
 
-
 /* SCROLL REVEAL */
 
-const reveals = document.querySelectorAll(".reveal");
+const reveals =
+    document.querySelectorAll(".reveal");
 
 
 function revealOnScroll(){
 
     reveals.forEach(function(element){
 
-        const windowHeight = window.innerHeight;
+        const windowHeight =
+            window.innerHeight;
 
         const elementTop =
             element.getBoundingClientRect().top;
@@ -1834,8 +2212,35 @@ window.addEventListener(
     }
 );
 
-</script>
 
+/* PREVENT MULTIPLE VIDEOS PLAYING */
+
+const travelVideos =
+    document.querySelectorAll(".travel-video");
+
+
+travelVideos.forEach(function(video){
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            travelVideos.forEach(function(otherVideo){
+
+                if(otherVideo !== video){
+
+                    otherVideo.pause();
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+</script>
 
 </body>
 </html>
