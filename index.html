@@ -6,62 +6,44 @@
 
 <title>Asher The Poet | Official Website</title>
 
-<meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha. Poet, author, storyteller, traveller and servant of God.">
+<meta name="description" content="The official website of Asher The Poet — Jacob Stephen Mphampha. Explore poetry, books, creative writing, stories, travel and faith.">
 <meta name="author" content="Jacob Stephen Mphampha">
-<meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<meta property="og:title" content="Asher The Poet | Official Website">
-<meta property="og:description" content="Poet • Author • Storyteller • Traveller • Servant of God">
-<meta property="og:type" content="website">
-
-<!-- INSTALLABLE APP CONFIGURATION -->
 <link rel="manifest" href="/Asher-The-Poet/manifest.json">
-<link rel="icon" href="/Asher-The-Poet/icons/asher-icon-192.png" type="image/png">
-<link rel="apple-touch-icon" href="/Asher-The-Poet/icons/asher-icon-192.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --gold: #d4af37;
-    --gold-light: #f4d675;
-    --gold-dark: #8e7420;
-    --black: #050505;
-    --black2: #0b0b0b;
-    --black3: #111111;
-    --white: #f7f5ef;
-    --muted: #a6a6a6;
-    --line: rgba(212,175,55,.22);
+    --bg: #0b0b0d;
+    --surface: #141416;
+    --surface-light: #1c1c20;
+    --gold: #d6b46a;
+    --gold-light: #f4dfaa;
+    --white: #f7f4ed;
+    --muted: #b7b3aa;
+    --border: rgba(214,180,106,0.24);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    background:
-        radial-gradient(circle at 80% 10%,rgba(212,175,55,.08),transparent 30%),
-        radial-gradient(circle at 10% 70%,rgba(212,175,55,.05),transparent 30%),
-        var(--black);
+    background: var(--bg);
     color: var(--white);
-    font-family: "DM Sans",sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
     overflow-x: hidden;
-}
-
-body:before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: .025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-    z-index: 9999;
 }
 
 a {
@@ -69,18 +51,20 @@ a {
     text-decoration: none;
 }
 
-img {
+img, video {
     max-width: 100%;
+}
+
+img {
     display: block;
 }
 
 button {
-    font-family: inherit;
-    cursor: pointer;
+    font: inherit;
 }
 
 .container {
-    width: min(1180px,92%);
+    width: min(1120px, 90%);
     margin: auto;
 }
 
@@ -88,141 +72,94 @@ button {
     color: var(--gold);
 }
 
-/* LOADER */
-
-.loader {
-    position: fixed;
-    inset: 0;
-    background: #050505;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    animation: loaderOut 1s ease 1.5s forwards;
-    pointer-events: none;
-}
-
-.loader-content {
-    text-align: center;
-}
-
-.loader-logo {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 42px;
-    letter-spacing: 8px;
+.eyebrow {
     color: var(--gold);
-    animation: pulse 1.2s infinite alternate;
-}
-
-.loader-line {
-    width: 130px;
-    height: 1px;
-    background: var(--gold);
-    margin: 18px auto;
-}
-
-.loader-small {
-    color: #888;
-    font-size: 11px;
+    font-size: 0.76rem;
     letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
 }
 
-@keyframes pulse {
-    from { opacity: .45; transform: scale(.98); }
-    to { opacity: 1; transform: scale(1); }
+.section {
+    padding: 90px 0;
 }
 
-@keyframes loaderOut {
-    to { opacity: 0; visibility: hidden; }
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.gold-line {
+    display: block;
+    width: 65px;
+    height: 2px;
+    background: var(--gold);
+    margin: 22px auto;
 }
 
 /* NAVIGATION */
 
-.navbar {
-    position: fixed;
+header {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5000;
-    background: rgba(5,5,5,.88);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    z-index: 1000;
+    background: rgba(11,11,13,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(14px);
 }
 
-.nav-inner {
-    min-height: 78px;
+.navbar {
+    min-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    flex-shrink: 0;
-}
-
-.logo-mark {
-    width: 38px;
-    height: 38px;
-    border: 1px solid var(--gold);
-    display: grid;
-    place-items: center;
-    color: var(--gold);
-    font-family: "Cormorant Garamond",serif;
-    font-size: 20px;
-    transform: rotate(45deg);
-}
-
-.logo-mark span {
-    transform: rotate(-45deg);
-}
-
-.logo-text strong {
-    display: block;
-    font-size: 13px;
-    letter-spacing: 3px;
-}
-
-.logo-text small {
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-size: 8px;
+.brand {
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-    gap: 22px;
     align-items: center;
+    gap: 22px;
 }
 
 .nav-links a {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #bbb;
-    transition: .3s;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--gold-light);
 }
 
-.nav-contact {
-    border: 1px solid var(--gold);
-    padding: 11px 17px;
-    color: var(--gold) !important;
-}
-
-.menu {
+.menu-toggle {
     display: none;
-    font-size: 28px;
-    color: var(--gold);
-    cursor: pointer;
     background: transparent;
-    border: 0;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    padding: 7px 12px;
+    cursor: pointer;
 }
 
 /* BUTTONS */
@@ -231,775 +168,1246 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    padding: 14px 23px;
+    gap: 8px;
+    padding: 12px 23px;
     border: 1px solid var(--gold);
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 2px;
-    transition: .35s;
+    color: var(--gold-light);
     background: transparent;
-}
-
-.btn-primary {
-    background: var(--gold);
-    color: #080808;
-}
-
-.btn-outline {
-    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(212,175,55,.18);
+    background: var(--gold);
+    color: #111;
+    transform: translateY(-2px);
+}
+
+.btn-filled {
+    background: var(--gold);
+    color: #111;
+}
+
+.btn-filled:hover {
+    background: var(--gold-light);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 27px;
 }
 
 /* HERO */
 
 .hero {
-    min-height: 100vh;
-    padding: 150px 0 90px;
+    min-height: 650px;
     display: flex;
     align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 80% 30%, rgba(214,180,106,0.12), transparent 48%),
+        linear-gradient(135deg, #0b0b0d 30%, #141416 100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(
+        90deg,
+        rgba(11,11,13,0.98) 0%,
+        rgba(11,11,13,0.83) 55%,
+        rgba(11,11,13,0.4) 100%
+    );
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    gap: 70px;
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
-}
-
-.hero-label {
-    color: var(--gold);
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 5px;
-    margin-bottom: 22px;
+    gap: 50px;
+    padding-top: 65px;
+    padding-bottom: 65px;
 }
 
 .hero h1 {
-    font-family: "Cormorant Garamond",serif;
-    font-weight: 600;
-    font-size: clamp(58px,8vw,110px);
-    line-height: .82;
-    letter-spacing: -3px;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 1.04;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
 }
 
 .hero h1 span {
-    color: var(--gold);
     display: block;
+    color: var(--gold);
 }
 
-.hero-sub {
-    margin-top: 28px;
-    color: #b7b7b7;
-    font-size: 15px;
-    line-height: 1.9;
-    max-width: 560px;
+.hero-description {
+    max-width: 590px;
+    color: #d0ccc3;
+    font-size: 1.06rem;
 }
 
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-    margin-top: 34px;
+.hero-note {
+    margin-top: 20px;
+    color: var(--gold-light);
+    font-style: italic;
 }
 
-.hero-image-wrap {
+.hero-photo-wrap {
     position: relative;
-    max-width: 450px;
-    margin: auto;
-}
-
-.hero-image-wrap:before {
-    content: "";
-    position: absolute;
-    inset: -18px;
-    border: 1px solid rgba(212,175,55,.25);
-    transform: rotate(3deg);
-}
-
-.hero-image-wrap:after {
-    content: "";
-    position: absolute;
-    inset: 18px -18px -18px 18px;
-    border: 1px solid rgba(212,175,55,.12);
-    z-index: -1;
-}
-
-.hero-image {
+    max-width: 410px;
+    margin: 0 auto;
     width: 100%;
-    aspect-ratio: 4/5;
+}
+
+.hero-photo-frame {
+    padding: 10px;
+    border: 1px solid var(--gold);
+    background: rgba(214,180,106,0.04);
+    box-shadow: 0 20px 70px rgba(0,0,0,0.5);
+}
+
+.hero-photo {
+    width: 100%;
+    height: 490px;
     object-fit: cover;
-    object-position: center;
-    filter: grayscale(10%);
-    position: relative;
-    z-index: 2;
+    object-position: center top;
+    background: var(--surface);
 }
 
-.hero-badge {
-    position: absolute;
-    bottom: 22px;
-    left: -28px;
-    z-index: 3;
-    background: #090909;
-    border: 1px solid var(--line);
-    padding: 17px 20px;
-    box-shadow: 0 20px 50px #000;
-}
-
-.hero-badge strong {
-    display: block;
-    color: var(--gold);
-    font-family: "Cormorant Garamond",serif;
-    font-size: 23px;
-    white-space: nowrap;
-}
-
-.hero-badge small {
-    color: #888;
-    font-size: 9px;
+.photo-caption {
+    text-align: center;
+    color: var(--gold-light);
+    padding-top: 15px;
+    font-size: 0.88rem;
     letter-spacing: 2px;
 }
 
-/* MARQUEE */
+/* INTRODUCTION */
 
-.marquee {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 17px 0;
-    overflow: hidden;
-    white-space: nowrap;
+.intro {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
-.marquee-track {
-    display: inline-block;
-    animation: marquee 25s linear infinite;
+.intro-inner {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
 }
 
-.marquee span {
-    margin: 0 35px;
-    font-family: "Cormorant Garamond",serif;
-    font-size: 20px;
-    color: #888;
+.intro blockquote {
+    color: var(--white);
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-style: italic;
+    line-height: 1.6;
 }
 
-.marquee b {
+.signature {
     color: var(--gold);
-}
-
-@keyframes marquee {
-    to { transform: translateX(-50%); }
-}
-
-/* GENERAL SECTIONS */
-
-section {
-    padding: 110px 0;
-    scroll-margin-top: 75px;
-}
-
-.section-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    align-items: end;
-    margin-bottom: 55px;
-}
-
-.eyebrow {
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 13px;
-}
-
-.section-title {
-    font-family: "Cormorant Garamond",serif;
-    font-size: clamp(42px,6vw,70px);
-    font-weight: 500;
-    line-height: .95;
-}
-
-.section-description {
-    max-width: 420px;
-    color: #8e8e8e;
-    line-height: 1.8;
-    font-size: 13px;
+    margin-top: 22px;
+    letter-spacing: 1px;
 }
 
 /* ABOUT */
 
 .about-grid {
     display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 80px;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 55px;
 }
 
-.about-number {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 150px;
-    color: rgba(212,175,55,.08);
-    line-height: .7;
+.about-image {
+    border: 1px solid var(--border);
+    padding: 9px;
+    background: var(--surface);
 }
 
-.about-copy {
-    color: #aaa;
-    line-height: 1.95;
-    font-size: 15px;
+.about-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center top;
 }
 
-.about-copy p {
+.about-copy h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
     margin-bottom: 22px;
 }
 
-.signature {
-    font-family: "Cormorant Garamond",serif;
+.about-copy p {
+    color: var(--muted);
+    margin-bottom: 17px;
+}
+
+/* VALUES */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 30px 25px;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.value-number {
     color: var(--gold);
-    font-size: 29px;
-    font-style: italic;
-    margin-top: 30px;
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
 }
 
 /* BOOKS */
 
-.books {
-    background: linear-gradient(rgba(255,255,255,.018),rgba(255,255,255,.018));
+.books-section {
+    background: #101012;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .book-card {
-    background: linear-gradient(145deg,#101010,#080808);
-    border: 1px solid rgba(255,255,255,.08);
-    padding: 25px;
-    transition: .4s;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, border-color 0.25s;
 }
 
 .book-card:hover {
-    border-color: rgba(212,175,55,.5);
-    transform: translateY(-8px);
+    transform: translateY(-5px);
+    border-color: var(--gold);
 }
 
 .book-cover {
-    height: 500px;
-    overflow: hidden;
-    background: #161616;
-    position: relative;
+    height: 350px;
+    padding: 20px;
+    background: #19191c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book-cover img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: .6s;
-}
-
-.book-card:hover .book-cover img {
-    transform: scale(1.025);
 }
 
 .book-info {
-    padding: 25px 5px 5px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.book-number {
-    color: var(--gold);
-    font-size: 9px;
-    letter-spacing: 3px;
-}
-
-.book-title {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 34px;
-    margin: 8px 0 4px;
-}
-
-.book-price {
-    display: inline-block;
-    color: #080808;
-    background: var(--gold);
-    padding: 7px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin: 8px 0 15px;
+.book-info h3 {
+    color: var(--gold-light);
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
 }
 
 .book-info p {
-    color: #888;
-    font-size: 13px;
-    line-height: 1.7;
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 15px;
 }
 
-.buy-book {
-    width: 100%;
-    margin-top: 22px;
-    background: transparent;
+.book-price {
     color: var(--gold);
-    border: 1px solid var(--gold);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: auto;
+    padding-top: 8px;
+    padding-bottom: 15px;
 }
 
-.buy-book:hover {
-    background: var(--gold);
-    color: #080808;
+.book-info .btn {
+    width: 100%;
 }
 
-/* TRAVEL JOURNAL */
+/* GALLERY */
 
-.travel-section {
-    position: relative;
-    background:
-        radial-gradient(circle at 15% 20%,rgba(212,175,55,.07),transparent 35%),
-        radial-gradient(circle at 85% 80%,rgba(212,175,55,.05),transparent 35%),
-        #070707;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gallery-item {
+    border: 1px solid var(--border);
+    background: var(--surface);
     overflow: hidden;
 }
 
-.travel-heading {
-    max-width: 680px;
-    margin-bottom: 45px;
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s;
 }
 
-.travel-heading p {
-    color: #858585;
-    font-size: 14px;
-    line-height: 1.9;
-    margin-top: 22px;
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-caption {
+    padding: 13px 15px;
+    color: var(--gold-light);
+    font-size: 0.92rem;
+}
+
+/* TRAVEL */
+
+.travel-section {
+    background: var(--surface);
 }
 
 .travel-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .travel-card {
-    position: relative;
-    background: #090909;
-    border: 1px solid rgba(255,255,255,.08);
-    overflow: hidden;
-    transition: .5s ease;
-}
-
-.travel-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(212,175,55,.55);
-    box-shadow: 0 25px 70px rgba(0,0,0,.55);
-}
-
-.travel-video-wrap {
-    position: relative;
-    background: #000;
-    aspect-ratio: 16/10;
+    background: var(--bg);
+    border: 1px solid var(--border);
     overflow: hidden;
 }
 
-.travel-video {
+.travel-card video {
     width: 100%;
-    height: 100%;
     display: block;
-    object-fit: cover;
     background: #000;
-}
-
-.travel-number {
-    position: absolute;
-    top: 18px;
-    left: 18px;
-    z-index: 3;
-    padding: 8px 12px;
-    background: rgba(5,5,5,.82);
-    border: 1px solid rgba(212,175,55,.45);
-    color: var(--gold);
-    font-size: 9px;
-    letter-spacing: 3px;
-    pointer-events: none;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
 }
 
 .travel-info {
-    padding: 25px 25px 28px;
+    padding: 20px;
 }
 
-.travel-location {
-    color: var(--gold);
-    text-transform: uppercase;
-    font-size: 9px;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+.travel-info h3 {
+    color: var(--gold-light);
+    margin-bottom: 7px;
 }
 
-.travel-title {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 34px;
-    font-weight: 500;
-    margin-bottom: 10px;
+.travel-info p {
+    color: var(--muted);
+    font-size: 0.92rem;
 }
 
-.travel-description {
-    color: #808080;
-    font-size: 13px;
-    line-height: 1.75;
-}
+/* FAITH */
 
-.travel-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-    padding-top: 17px;
-    border-top: 1px solid rgba(255,255,255,.07);
-}
-
-.travel-meta span,
-.travel-meta strong {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-.travel-meta span {
-    color: #666;
-}
-
-.travel-meta strong {
-    color: var(--gold);
-}
-
-.travel-note {
-    text-align: center;
-    margin-top: 50px;
-    color: #666;
-    font-family: "Cormorant Garamond",serif;
-    font-size: 22px;
-    font-style: italic;
-}
-
-/* FEATURED PROJECT */
-
-.featured-box {
-    border: 1px solid var(--line);
-    min-height: 470px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 70% 50%,rgba(212,175,55,.1),transparent 40%),
-        #090909;
-}
-
-.featured-content {
-    padding: 70px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.featured-content h3 {
-    font-family: "Cormorant Garamond",serif;
-    font-size: clamp(42px,5vw,70px);
-    line-height: .9;
-    font-weight: 500;
-}
-
-.featured-content h3 span {
-    color: var(--gold);
-}
-
-.featured-content p {
-    color: #929292;
-    line-height: 1.8;
-    margin: 25px 0;
-    max-width: 500px;
-}
-
-.featured-art {
-    display: grid;
-    place-items: center;
-    position: relative;
-    min-height: 350px;
-}
-
-.featured-art:before {
-    content: "MIND";
-    font-family: "Cormorant Garamond",serif;
-    font-size: clamp(70px,12vw,150px);
-    color: rgba(212,175,55,.06);
-    transform: rotate(-90deg);
-}
-
-/* PHILOSOPHY */
-
-.philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.philosophy-card {
-    padding: 38px 30px;
-    border: 1px solid rgba(255,255,255,.08);
-    min-height: 220px;
-    transition: .35s;
-}
-
-.philosophy-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-7px);
-}
-
-.philosophy-icon {
-    color: var(--gold);
-    font-family: "Cormorant Garamond",serif;
-    font-size: 45px;
-}
-
-.philosophy-card h3 {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 30px;
-    margin: 10px 0;
-}
-
-.philosophy-card p {
-    color: #858585;
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-/* QUOTE */
-
-.quote-section {
-    text-align: center;
-    padding: 130px 0;
-    background: radial-gradient(circle,rgba(212,175,55,.09),transparent 45%);
-}
-
-.quote-mark {
-    color: var(--gold);
-    font-family: "Cormorant Garamond",serif;
-    font-size: 80px;
-    line-height: .5;
-}
-
-.quote {
+.faith-panel {
     max-width: 900px;
-    margin: 25px auto;
-    font-family: "Cormorant Garamond",serif;
-    font-size: clamp(32px,5vw,62px);
-    line-height: 1.05;
+    margin: auto;
+    padding: 45px;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(ellipse at top, rgba(214,180,106,0.1), transparent 70%),
+        var(--surface);
+    text-align: center;
 }
 
-.quote-author {
-    color: #777;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 9px;
+.faith-panel h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.faith-panel p {
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 15px;
 }
 
 /* CONTACT */
 
-.contact-box {
-    border: 1px solid var(--line);
-    padding: 70px;
+.contact-section {
+    background: #101012;
+    border-top: 1px solid var(--border);
+}
+
+.contact-panel {
+    max-width: 850px;
+    margin: auto;
     text-align: center;
-    background:
-        radial-gradient(circle at center,rgba(212,175,55,.08),transparent 45%),
-        #090909;
 }
 
-.contact-box h2 {
-    font-family: "Cormorant Garamond",serif;
-    font-size: clamp(45px,6vw,75px);
-    font-weight: 500;
-}
-
-.contact-box p {
-    color: #888;
-    max-width: 560px;
-    margin: 20px auto 30px;
-    line-height: 1.8;
-    font-size: 13px;
+.contact-panel > p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .contact-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 13px;
+    gap: 15px;
+    margin-top: 30px;
 }
 
-.contact-btn {
-    min-width: 190px;
+.contact-note {
+    color: var(--muted);
+    margin-top: 24px;
+    font-size: 0.9rem;
+}
+
+/* APP INSTALL */
+
+.install-card {
+    max-width: 850px;
+    margin: 35px auto 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-align: center;
+}
+
+.install-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.install-card p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+#installButton {
+    display: none;
 }
 
 /* FOOTER */
 
 footer {
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    padding: 35px 0;
+    text-align: center;
+    background: #080809;
 }
 
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
-}
-
-.footer-name {
-    font-family: "Cormorant Garamond",serif;
-    font-size: 28px;
+.footer-brand {
     color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
 }
 
-.footer-copy {
-    color: #666;
-    font-size: 10px;
-    letter-spacing: 1px;
+footer p {
+    color: var(--muted);
+    font-size: 0.85rem;
 }
 
-/* FLOATING WHATSAPP */
-
-.whatsapp-float {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: #25D366;
-    display: grid;
-    place-items: center;
-    z-index: 4000;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    transition: .3s;
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin: 17px 0;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
+.footer-links a {
+    color: var(--gold-light);
+    font-size: 0.88rem;
 }
 
-.whatsapp-float svg {
-    width: 27px;
-    height: 27px;
-    fill: white;
-}
+/* RESPONSIVE DESIGN */
 
-/* INSTALL APP BUTTON */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
 
-.install-app {
-    position: fixed;
-    left: 18px;
-    bottom: 20px;
-    z-index: 4500;
-    display: none;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold);
-    color: #080808;
-    border: 1px solid var(--gold-light);
-    padding: 13px 17px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    box-shadow: 0 8px 25px rgba(0,0,0,.4);
-}
-
-.install-app:hover {
-    background: var(--gold-light);
-    transform: translateY(-3px);
-}
-
-/* REVEAL ANIMATION */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 1s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: none;
-}
-
-/* MOBILE */
-
-@media(max-width:850px) {
     .nav-links {
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        background: rgba(5,5,5,.98);
         display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #101012;
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        border-bottom: 1px solid var(--line);
     }
 
-    .nav-links.show {
+    .nav-links.open {
         display: flex;
     }
 
     .nav-links a {
-        padding: 16px 5px;
-        border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .nav-contact {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .menu {
-        display: block;
-    }
-
-    .hero {
-        padding-top: 130px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(214,180,106,0.1);
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 65px;
+        gap: 35px;
     }
 
-    .hero h1 {
-        font-size: 70px;
+    .hero-copy {
+        text-align: center;
     }
 
-    .hero-image-wrap {
-        max-width: 390px;
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero .button-row {
+        justify-content: center;
+    }
+
+    .hero-photo-wrap {
+        max-width: 360px;
+    }
+
+    .hero-photo {
+        height: 430px;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
     }
 
-    .about-number {
-        font-size: 100px;
+    .about-image {
+        max-width: 420px;
+        margin: auto;
     }
 
-    .section-top {
-        display: block;
+    .books-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .section-description {
-        margin-top: 20px;
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        width: 91%;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-grid {
+        padding-top: 65px;
+        padding-bottom: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.65rem, 12vw, 4rem);
+        letter-spacing: -1px;
+    }
+
+    .hero-photo {
+        height: 390px;
     }
 
     .books-grid,
-    .travel-grid {
+    .travel-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-cover {
+        height: 330px;
+    }
+
+    .gallery-item img {
+        height: 280px;
+    }
+
+    .faith-panel {
+        padding: 30px 20px;
+    }
+
+    .button-row,
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .button-row .btn,
+    .contact-buttons .btn {
+        width: 100%;
+    }
+
+    .brand {
+        font-size: 1.05rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="#home" class="brand">ASHER THE POET</a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            MENU ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#books">Books</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#travel">Travel</a>
+            <a href="#faith">Faith</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+
+            <div class="hero-copy">
+                <p class="eyebrow">Poet · Author · Storyteller</p>
+
+                <h1>
+                    ASHER
+                    <span>THE POET</span>
+                </h1>
+
+                <p class="hero-description">
+                    Welcome to the official home of Jacob Stephen Mphampha,
+                    known professionally as Asher The Poet — a creative voice
+                    exploring life, love, wisdom, purpose and the power of words.
+                </p>
+
+                <p class="hero-note">
+                    A servant of God. A student of life. A voice through words.
+                </p>
+
+                <div class="button-row">
+                    <a class="btn btn-filled" href="#books">Explore My Books</a>
+                    <a class="btn" href="#about">Discover My Story</a>
+                </div>
+            </div>
+
+            <div class="hero-photo-wrap">
+                <div class="hero-photo-frame">
+                    <img
+                        class="hero-photo"
+                        src="asherpng.JPG"
+                        alt="Asher The Poet"
+                        fetchpriority="high">
+                </div>
+                <p class="photo-caption">JACOB STEPHEN MPHAMPHA</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="section intro">
+        <div class="container intro-inner">
+            <p class="eyebrow">A Thought to Remember</p>
+
+            <blockquote>
+                “Why worry, when nothing in this world is truly mine?”
+            </blockquote>
+
+            <span class="gold-line"></span>
+
+            <p class="signature">— Asher The Poet</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <img
+                    src="asherpng.JPG"
+                    alt="Portrait of Asher The Poet"
+                    loading="lazy">
+            </div>
+
+            <div class="about-copy">
+                <p class="eyebrow">The Person Behind the Pen</p>
+
+                <h2>
+                    Words with <span class="gold">Purpose.</span>
+                    Stories with <span class="gold">Meaning.</span>
+                </h2>
+
+                <p>
+                    Asher The Poet is the creative identity of Jacob Stephen
+                    Mphampha, a writer and storyteller inspired by the
+                    experiences, questions and lessons that shape human life.
+                </p>
+
+                <p>
+                    Through poetry, books and reflective writing, his work
+                    explores love, personal growth, faith, resilience,
+                    integrity and the pursuit of a meaningful life.
+                </p>
+
+                <p>
+                    His ambition is to create work that goes beyond entertainment:
+                    words that encourage reflection, challenge perspectives
+                    and inspire people to grow.
+                </p>
+
+                <p>
+                    Beyond writing, he values learning, discipline, creativity
+                    and the belief that character matters as much as achievement.
+                </p>
+
+                <div class="button-row">
+                    <a href="#books" class="btn btn-filled">Discover the Books</a>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section" id="values">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">The Philosophy</p>
+                <h2>What Guides the <span class="gold">Journey</span></h2>
+                <p>
+                    Principles that shape the work, the message and the person
+                    behind the name.
+                </p>
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+                    <div class="value-number">01</div>
+                    <h3>Wisdom</h3>
+                    <p>
+                        Seeking understanding beyond appearances and learning
+                        from the experiences that life places before us.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-number">02</div>
+                    <h3>Integrity</h3>
+                    <p>
+                        Valuing honesty, responsibility and doing what is right
+                        even when recognition is absent.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <div class="value-number">03</div>
+                    <h3>Purpose</h3>
+                    <p>
+                        Using creativity and continuous learning to contribute
+                        something meaningful to the lives of others.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKS -->
+    <section class="section books-section" id="books">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Published Works</p>
+                <h2>Books by <span class="gold">Asher The Poet</span></h2>
+                <p>
+                    Explore ideas, reflections and stories through the written word.
+                    Each book is an invitation to think, learn and see life differently.
+                </p>
+            </div>
+
+            <div class="books-grid">
+
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img
+                            src="broken-silencepng.png"
+                            alt="Broken Silence book cover"
+                            loading="lazy">
+                    </div>
+
+                    <div class="book-info">
+                        <h3>Broken Silence</h3>
+
+                        <p>
+                            A work about the thoughts, feelings and experiences
+                            that often remain unspoken.
+                        </p>
+
+                        <p class="book-price">$5</p>
+
+                        <a
+                            class="btn btn-filled book-order"
+                            href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20am%20interested%20in%20purchasing%20Broken%20Silence."
+                            target="_blank"
+                            rel="noopener">
+                            Enquire to Buy
+                        </a>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img
+                            src="rise-above-averagepng.png"
+                            alt="Rise Above Average book cover"
+                            loading="lazy">
+                    </div>
+
+                    <div class="book-info">
+                        <h3>Rise Above Average</h3>
+
+                        <p>
+                            A book for readers seeking personal growth,
+                            discipline, greater awareness and purposeful living.
+                        </p>
+
+                        <p class="book-price">$5</p>
+
+                        <a
+                            class="btn btn-filled book-order"
+                            href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20am%20interested%20in%20purchasing%20Rise%20Above%20Average."
+                            target="_blank"
+                            rel="noopener">
+                            Enquire to Buy
+                        </a>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img
+                            src="asherpng.JPG"
+                            alt="The Wisdom of Love book artwork"
+                            loading="lazy">
+                    </div>
+
+                    <div class="book-info">
+                        <h3>The Wisdom of Love</h3>
+
+                        <p>
+                            Reflections on love, understanding, relationships
+                            and the wisdom required to value another person.
+                        </p>
+
+                        <p class="book-price">$5</p>
+
+                        <a
+                            class="btn btn-filled book-order"
+                            href="https://wa.me/265987569509?text=Hello%20Asher%20The%20Poet%2C%20I%20am%20interested%20in%20purchasing%20The%20Wisdom%20of%20Love."
+                            target="_blank"
+                            rel="noopener">
+                            Enquire to Buy
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="contact-note" style="text-align:center;">
+                Book price: $5 each. Contact the author to confirm availability,
+                delivery options and payment arrangements.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Visual Journal</p>
+                <h2>The <span class="gold">Gallery</span></h2>
+                <p>
+                    A space for creative expression, personal milestones
+                    and the journey behind the work.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <figure class="gallery-item">
+                    <img
+                        src="asherpng.JPG"
+                        alt="Asher The Poet portrait"
+                        loading="lazy">
+                    <figcaption class="gallery-caption">
+                        Asher The Poet
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img
+                        src="broken-silencepng.png"
+                        alt="Broken Silence"
+                        loading="lazy">
+                    <figcaption class="gallery-caption">
+                        Broken Silence
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img
+                        src="rise-above-averagepng.png"
+                        alt="Rise Above Average"
+                        loading="lazy">
+                    <figcaption class="gallery-caption">
+                        Rise Above Average
+                    </figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAVEL -->
+    <section class="section travel-section" id="travel">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Beyond the Page</p>
+                <h2>Travel & <span class="gold">Experiences</span></h2>
+                <p>
+                    Life offers lessons beyond books. This section brings
+                    together moments, journeys and experiences worth remembering.
+                </p>
+            </div>
+
+            <div class="travel-grid">
+
+                <article class="travel-card">
+                    <video controls playsinline preload="metadata">
+                        <source
+                            src="video_20250701_102244.mp4"
+                            type="video/mp4">
+                        Your browser does not support this video.
+                    </video>
+
+                    <div class="travel-info">
+                        <h3>Travel Journal</h3>
+                        <p>
+                            Moments and experiences from the journey.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="travel-card">
+                    <video controls playsinline preload="metadata">
+                        <source
+                            src="video_20250701_115028.mp4"
+                            type="video/mp4">
+                        Your browser does not support this video.
+                    </video>
+
+                    <div class="travel-info">
+                        <h3>Memories in Motion</h3>
+                        <p>
+                            A visual record of experiences beyond the written page.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAITH -->
+    <section class="section" id="faith">
+        <div class="container">
+
+            <div class="faith-panel">
+                <p class="eyebrow">Faith & Purpose</p>
+
+                <h2>
+                    A <span class="gold">Servant of God</span>
+                </h2>
+
+                <p>
+                    Faith is an important part of the journey. Beyond creativity
+                    and personal ambition, there is a desire to grow in character,
+                    walk with humility and live with a sense of responsibility
+                    before God.
+                </p>
+
+                <p>
+                    The journey is not only about what a person achieves,
+                    but also about the values, convictions and service
+                    that shape the person along the way.
+                </p>
+
+                <span class="gold-line"></span>
+
+                <p class="signature">Faith. Character. Purpose.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+
+            <div class="contact-panel">
+                <p class="eyebrow">Let's Connect</p>
+
+                <h2 class="section-heading" style="margin-bottom:20px;">
+                    Every Meaningful Connection <span class="gold">Begins Somewhere.</span>
+                </h2>
+
+                <p>
+                    For book enquiries, creative collaborations, writing,
+                    professional opportunities or general messages,
+                    you are welcome to get in touch.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a
+                        class="btn btn-filled"
+                        href="https://wa.me/265987569509"
+                        target="_blank"
+                        rel="noopener">
+                        Contact on WhatsApp
+                    </a>
+
+                    <a
+                        class="btn"
+                        href="mailto:phamphajacob@gmail.com">
+                        Send an Email
+                    </a>
+
+                </div>
+
+                <p class="contact-note">
+                    For professional enquiries, please include the purpose
+                    of your message so we can communicate clearly.
+                </p>
+            </div>
+
+            <!-- APP INSTALLATION -->
+            <div class="install-card">
+                <h3>Take Asher The Poet With You</h3>
+
+                <p>
+                    Install the website on your compatible device for a
+                    convenient, app-like experience.
+                </p>
+
+                <button class="btn btn-filled" id="installButton" type="button">
+                    Install App
+                </button>
+
+                <p id="installMessage" aria-live="polite">
+                    If the install button is unavailable, open your browser
+                    menu and look for "Install app" or "Add to Home screen."
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <p class="footer-brand">ASHER THE POET</p>
+
+        <p>Jacob Stephen Mphampha</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#books">Books</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p>
+            Poetry. Wisdom. Creativity. Purpose.
+        </p>
+
+        <p style="margin-top:12px;">
+            &copy; <span id="currentYear"></span> Asher The Poet.
+            All rights reserved.
+        </p>
+
+    </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+/* AUTOMATIC COPYRIGHT YEAR */
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+/* PROGRESSIVE WEB APP INSTALLATION */
+let deferredInstallPrompt = null;
+
+const installButton = document.getElementById("installButton");
+const installMessage = document.getElementById("installMessage");
+
+function isAppInstalled() {
+    return window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true;
+}
+
+if (isAppInstalled()) {
+    installButton.style.display = "none";
+    installMessage.textContent = "Asher The Poet is running as an installed app.";
+}
+
+window.addEventListener("beforeinstallprompt", function (event) {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+
+    installButton.style.display = "inline-flex";
+    installMessage.textContent =
+        "Install the Asher The Poet app directly on your device.";
+});
+
+installButton.addEventListener("click", async function () {
+    if (!deferredInstallPrompt) {
+        installMessage.textContent =
+            "If installation is not available, open your browser menu and choose Install app or Add to Home screen.";
+        return;
+    }
+
+    deferredInstallPrompt.prompt();
+
+    const result = await deferredInstallPrompt.userChoice;
+
+    if (result.outcome === "accepted") {
+        installMessage.textContent =
+            "Thank you for installing Asher The Poet.";
+    } else {
+        installMessage.textContent =
+            "Installation was cancelled. You can try again later.";
+    }
+
+    deferredInstallPrompt = null;
+    installButton.style.display = "none";
+});
+
+window.addEventListener("appinstalled", function () {
+    installButton.style.display = "none";
+    installMessage.textContent =
+        "Asher The Poet has been installed successfully.";
+});
+
+/* REGISTER SERVICE WORKER */
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker.register(
+            "/Asher-The-Poet/service-worker.js"
+        ).catch(function (error) {
+            console.error("Service worker registration failed:", error);
+        });
+    });
+}
+</script>
+
+</body>
+</html>
