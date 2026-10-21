@@ -1,0 +1,22 @@
+{
+"name": "Asher The Poet",
+"short_name": "Asher Poet",
+"description": "The official app for Asher The Poet — author, poet and creative writer.",
+"start_url": "./",
+"scope": "./",
+"display": "standalone",
+"background_color": "#0b0b0d",
+"theme_color": "#0b0b0d",
+"icons": [
+{
+"src": "icons/asher-icon-192.png",
+"sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "icons/asher-icon-512.png",
+"sizes": "512x512",
+"type": "image/png"
+}
+]
+}
