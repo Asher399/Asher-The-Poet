@@ -1,12 +1,20 @@
 {
-"name": "Asher The Poet",
-"short_name": "Asher Poet",
-"description": "The official app for Asher The Poet — author, poet and creative writer.",
-"start_url": "./",
+"id": "./",
+"name": "Asher The Poet | Official Website",
+"short_name": "Asher The Poet",
+"description": "The official digital home of Jacob Stephen Mphampha — poet, author, storyteller, traveller and servant of God.",
+"start_url": "./?source=pwa",
 "scope": "./",
 "display": "standalone",
-"background_color": "#0b0b0d",
-"theme_color": "#0b0b0d",
+"orientation": "portrait",
+"background_color": "#050505",
+"theme_color": "#080808",
+"lang": "en",
+"categories": [
+"books",
+"education",
+"lifestyle"
+],
 "icons": [
 {
 "src": "icons/asher-icon-192.png",
